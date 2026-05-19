@@ -45,19 +45,20 @@
       if (this.idx >= this.sections.length) { this.renderDone(); return; }
 
       const sec = this.sections[this.idx];
-      // For plain-read, the "main text" is the original Hebrew at the SUGYA level
-      // (one pasuk/mishnah/chapter section = one sugya in our schema for chumash/avos).
-      const original = this.sugya && this.sugya.aramaic;
+      // Prefer section-level Hebrew + words (each section is one paragraph).
+      // Fall back to sugya-level if section doesn't have its own.
+      const original = sec.aramaic || (this.sugya && this.sugya.aramaic);
+      const sectionWords = sec.aramaic_words && sec.aramaic_words.length ? sec.aramaic_words : (this.sugya && this.sugya.aramaic_words);
       const translation = lang === "yi"
-        ? (this.sugya && this.sugya.aramaic_translation_yiddish || this.sugya && this.sugya.aramaic_translation)
-        : (this.sugya && this.sugya.aramaic_translation);
+        ? (sec.aramaic_translation_yiddish || sec.aramaic_translation || (this.sugya && (this.sugya.aramaic_translation_yiddish || this.sugya.aramaic_translation)))
+        : (sec.aramaic_translation || (this.sugya && this.sugya.aramaic_translation));
       const explanation = lang === "yi" ? (sec.text_yiddish || sec.text) : sec.text;
       const isChumash = (PROGRESS.state.currentContentType === "chumash") || (this.sugya && this.sugya.id && this.sugya.id.startsWith("ber-"));
       const hasRashi = isRealCommentary(sec.rashi) || isRealCommentary(sec.rashi_explanation);
 
       // reset word map
       PLAINREAD._wordMap = {};
-      const tappableHebrew = this.renderTappableHebrew(original, this.sugya && this.sugya.aramaic_words);
+      const tappableHebrew = this.renderTappableHebrew(original, sectionWords);
 
       let html = '<div class="plainread-container">';
       html += cardActionsRow(sec.id);

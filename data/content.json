@@ -4988,7 +4988,97 @@
                   "tosfos": "[TOSFOS PLACEHOLDER — paste Tosfos text here]",
                   "tosfos_yiddish": "[תּוספּות פּלעצהאָלדער]",
                   "tosfos_explanation": "[Plain English explanation of what Tosfos says — replace this]",
-                  "tosfos_explanation_yiddish": "[פּלעצהאָלדער — פּשוטע פּירוש פֿון תּוספּות]"
+                  "tosfos_explanation_yiddish": "[פּלעצהאָלדער — פּשוטע פּירוש פֿון תּוספּות]",
+                  "aramaic": "תַּנְיָא בְּסוֹף פֶּרֶק ג׳ דְּנִדָּה: מַשְׁבִּיעִין אוֹתוֹ — תְּהִי צַדִּיק וְאַל תְּהִי רָשָׁע. וַאֲפִילּוּ כָּל הָעוֹלָם כּוּלּוֹ אוֹמְרִים לְךָ צַדִּיק אַתָּה — הֱיֵה בְּעֵינֶיךָ כְּרָשָׁע. וְצָרִיךְ לְהָבִין: דְּהָא תְּנַן בְּאָבוֹת, וְאַל תְּהִי רָשָׁע בִּפְנֵי עַצְמְךָ.",
+                  "aramaic_translation": "It is taught at the end of Chapter 3 of Niddah: They make him swear — Be a Tzadik and do not be a Rasha. And even if the entire world tells you 'You are a Tzadik' — consider yourself a Rasha. But this needs explanation: we learned in Avos, 'Do not be a Rasha in your own eyes' [the opposite!].",
+                  "aramaic_translation_yiddish": "ס׳איז געלערנט אין סוף פּרק ג׳ פֿון נדה: מ׳זאָגט אים אַ שבועה — זײַ אַ צדיק און זײַ נישט קיין רשע. און אַפֿילו די גאַנצע וועלט זאָגט דיר 'דו ביסט אַ צדיק' — האַלט זיך אין דײַנע אויגן ווי אַ רשע. אָבער עס דאַרף אַ דערקלערונג: מיר האָבן געלערנט אין אבות 'און זײַ נישט קיין רשע אין דײַנע אייגענע אויגן' [פֿאַרקערט!].",
+                  "aramaic_words": [
+                    {
+                      "a": "תַּנְיָא",
+                      "en": "it is taught",
+                      "yi": "מ׳לערנט"
+                    },
+                    {
+                      "a": "בְּסוֹף",
+                      "en": "at the end of",
+                      "yi": "אין סוף פֿון"
+                    },
+                    {
+                      "a": "פֶּרֶק ג׳ דְּנִדָּה",
+                      "en": "Chapter 3 of Niddah",
+                      "yi": "פּרק ג׳ פֿון נדה"
+                    },
+                    {
+                      "a": "מַשְׁבִּיעִין אוֹתוֹ",
+                      "en": "they make him swear",
+                      "yi": "מ׳זאָגט אים שבועה"
+                    },
+                    {
+                      "a": "תְּהִי צַדִּיק",
+                      "en": "be a Tzadik",
+                      "yi": "זײַ אַ צדיק"
+                    },
+                    {
+                      "a": "וְאַל תְּהִי רָשָׁע",
+                      "en": "and do not be a Rasha",
+                      "yi": "און זײַ נישט קיין רשע"
+                    },
+                    {
+                      "a": "וַאֲפִילּוּ",
+                      "en": "and even (if)",
+                      "yi": "און אַפֿילו"
+                    },
+                    {
+                      "a": "כָּל הָעוֹלָם",
+                      "en": "the whole world",
+                      "yi": "די גאַנצע וועלט"
+                    },
+                    {
+                      "a": "כּוּלּוֹ",
+                      "en": "all of it",
+                      "yi": "די גאַנצע"
+                    },
+                    {
+                      "a": "אוֹמְרִים לְךָ",
+                      "en": "tells you",
+                      "yi": "זאָגט דיר"
+                    },
+                    {
+                      "a": "צַדִּיק אַתָּה",
+                      "en": "you are a Tzadik",
+                      "yi": "דו ביסט אַ צדיק"
+                    },
+                    {
+                      "a": "הֱיֵה בְּעֵינֶיךָ",
+                      "en": "consider yourself (lit. be in your eyes)",
+                      "yi": "האַלט זיך אין דײַנע אויגן"
+                    },
+                    {
+                      "a": "כְּרָשָׁע",
+                      "en": "as a Rasha",
+                      "yi": "ווי אַ רשע"
+                    },
+                    {
+                      "a": "וְצָרִיךְ לְהָבִין",
+                      "en": "and (this) needs to be understood",
+                      "yi": "און עס דאַרף אַ דערקלערונג"
+                    },
+                    {
+                      "a": "דְּהָא תְּנַן",
+                      "en": "for behold we learned",
+                      "yi": "ווײַל מיר האָבן געלערנט"
+                    },
+                    {
+                      "a": "בְּאָבוֹת",
+                      "en": "in (Pirkei) Avos",
+                      "yi": "אין אבות"
+                    },
+                    {
+                      "a": "בִּפְנֵי עַצְמְךָ",
+                      "en": "in your own eyes",
+                      "yi": "אין דײַנע אייגענע אויגן"
+                    }
+                  ]
                 },
                 {
                   "id": "tanya-ch1-s2",
@@ -5028,7 +5118,97 @@
                   "tosfos": "[TOSFOS PLACEHOLDER — paste Tosfos text here]",
                   "tosfos_yiddish": "[תּוספּות פּלעצהאָלדער]",
                   "tosfos_explanation": "[Plain English explanation of what Tosfos says — replace this]",
-                  "tosfos_explanation_yiddish": "[פּלעצהאָלדער — פּשוטע פּירוש פֿון תּוספּות]"
+                  "tosfos_explanation_yiddish": "[פּלעצהאָלדער — פּשוטע פּירוש פֿון תּוספּות]",
+                  "aramaic": "וְגַם, אִם הוּא בְּעֵינָיו כְּרָשָׁע יֵרַע לְבָבוֹ וְיִהְיֶה עָצֵב, וְלֹא יוּכַל לַעֲבֹד ה׳ בְּשִׂמְחָה וּבְטוּב לֵבָב. אַךְ הָעִנְיָן, כִּי הִנֵּה מָצִינוּ בַּגְּמָרָא חֲמִשָּׁה חֲלוּקוֹת: צַדִּיק וְטוֹב לוֹ, צַדִּיק וְרַע לוֹ, רָשָׁע וְטוֹב לוֹ, רָשָׁע וְרַע לוֹ, וּבֵינוֹנִי. וּפֵרְשׁוּ בַּגְּמָרָא: צַדִּיק וְטוֹב לוֹ — צַדִּיק גָּמוּר. צַדִּיק וְרַע לוֹ — צַדִּיק שֶׁאֵינוֹ גָּמוּר.",
+                  "aramaic_translation": "Also, if a person considers himself a Rasha, his heart will be pained and he will be depressed, and he will not be able to serve Hashem with joy and goodness of heart. But the explanation: behold we find in the Gemara five categories: Tzadik and good to him, Tzadik and bad to him, Rasha and good to him, Rasha and bad to him, and Beinoni. The Gemara explains: Tzadik with good = complete Tzadik; Tzadik with bad = incomplete Tzadik.",
+                  "aramaic_translation_yiddish": "אויך, אויב אַ מענטש האַלט זיך פֿאַר אַ רשע, וועט זײַן האַרץ זײַן באַטריבט און ער וועט זײַן טרויעריק, און וועט נישט קענען דינען השם מיט פֿרייד. אָבער די ערקלערונג: מיר געפֿינען אין דער גמרא פֿינף חלוקות: צדיק וטוב לו, צדיק ורע לו, רשע וטוב לו, רשע ורע לו, און בינוני. די גמרא דערקלערט: צדיק מיט גוטס = צדיק גמור; צדיק מיט שלעכטס = צדיק שאינו גמור.",
+                  "aramaic_words": [
+                    {
+                      "a": "וְגַם",
+                      "en": "and also",
+                      "yi": "און אויך"
+                    },
+                    {
+                      "a": "אִם הוּא",
+                      "en": "if he is",
+                      "yi": "אויב ער איז"
+                    },
+                    {
+                      "a": "יֵרַע לְבָבוֹ",
+                      "en": "his heart will be pained",
+                      "yi": "וועט זײַן האַרץ באַטריבט"
+                    },
+                    {
+                      "a": "וְיִהְיֶה עָצֵב",
+                      "en": "and he will be depressed",
+                      "yi": "און ער וועט זײַן טרויעריק"
+                    },
+                    {
+                      "a": "לַעֲבֹד ה׳",
+                      "en": "to serve Hashem",
+                      "yi": "צו דינען השם"
+                    },
+                    {
+                      "a": "בְּשִׂמְחָה",
+                      "en": "with joy",
+                      "yi": "מיט פֿרייד"
+                    },
+                    {
+                      "a": "וּבְטוּב לֵבָב",
+                      "en": "and good-heartedness",
+                      "yi": "און מיט גוטס פֿון האַרץ"
+                    },
+                    {
+                      "a": "אַךְ הָעִנְיָן",
+                      "en": "but the matter is",
+                      "yi": "אָבער די ערקלערונג"
+                    },
+                    {
+                      "a": "מָצִינוּ בַּגְּמָרָא",
+                      "en": "we find in the Gemara",
+                      "yi": "מיר געפֿינען אין גמרא"
+                    },
+                    {
+                      "a": "חֲמִשָּׁה חֲלוּקוֹת",
+                      "en": "five categories",
+                      "yi": "פֿינף חלוקות"
+                    },
+                    {
+                      "a": "צַדִּיק וְטוֹב לוֹ",
+                      "en": "Tzadik and good to him",
+                      "yi": "צדיק וטוב לו"
+                    },
+                    {
+                      "a": "צַדִּיק וְרַע לוֹ",
+                      "en": "Tzadik and bad to him",
+                      "yi": "צדיק ורע לו"
+                    },
+                    {
+                      "a": "רָשָׁע וְטוֹב לוֹ",
+                      "en": "Rasha and good to him",
+                      "yi": "רשע וטוב לו"
+                    },
+                    {
+                      "a": "רָשָׁע וְרַע לוֹ",
+                      "en": "Rasha and bad to him",
+                      "yi": "רשע ורע לו"
+                    },
+                    {
+                      "a": "וּבֵינוֹנִי",
+                      "en": "and Beinoni",
+                      "yi": "און בינוני"
+                    },
+                    {
+                      "a": "צַדִּיק גָּמוּר",
+                      "en": "complete Tzadik",
+                      "yi": "צדיק גמור"
+                    },
+                    {
+                      "a": "צַדִּיק שֶׁאֵינוֹ גָּמוּר",
+                      "en": "incomplete Tzadik",
+                      "yi": "צדיק שאינו גמור"
+                    }
+                  ]
                 },
                 {
                   "id": "tanya-ch1-s3",
@@ -5068,7 +5248,112 @@
                   "tosfos": "[TOSFOS PLACEHOLDER — paste Tosfos text here]",
                   "tosfos_yiddish": "[תּוספּות פּלעצהאָלדער]",
                   "tosfos_explanation": "[Plain English explanation of what Tosfos says — replace this]",
-                  "tosfos_explanation_yiddish": "[פּלעצהאָלדער — פּשוטע פּירוש פֿון תּוספּות]"
+                  "tosfos_explanation_yiddish": "[פּלעצהאָלדער — פּשוטע פּירוש פֿון תּוספּות]",
+                  "aramaic": "וְהָרַמְבַּ\"ם פֵּרֵשׁ בְּהִלְכוֹת תְּשׁוּבָה דְּבֵינוֹנִי הוּא מַחֲצָה זְכוּיוֹת וּמַחֲצָה עֲוֹנוֹת. אַךְ קָשֶׁה — אִם כֵּן הָוֵה לֵיהּ לְמִתְנֵי שִׁבְעָה חֲלוּקוֹת. וְעוֹד, בֵּינוֹנִי שֶׁעָבַר עֲבֵרָה — נִקְרָא רָשָׁע גָּמוּר! אֶלָּא וַדַּאי, בֵּינוֹנִי דְּתַנְיָא — לֹא עָבַר עֲבֵרָה מִיָּמָיו, וְלֹא יַעֲבֹר. וְהוּא נִלְחָם תָּמִיד עִם יִצְרוֹ.",
+                  "aramaic_translation": "The Rambam explained in Hilchot Teshuvah that a Beinoni is half merits and half sins. But this is difficult — then there would have been seven categories! Furthermore, a Beinoni who committed a sin would be called a total Rasha! Rather: the Beinoni of Tanya is one who has never sinned in his lifetime and never will sin. He fights constantly with his Yetzer Hara.",
+                  "aramaic_translation_yiddish": "דער רמב\"ם דערקלערט אין הלכות תשובה אַז אַ בינוני איז האַלב זכותים און האַלב עוונות. אָבער דאָס איז שווער — אויב אַזוי, וואָלט מען געצייכנט זיבן חלוקות! און נאָך, אַ בינוני וואָס האָט געטאָן אַן עבירה — וואָלט גערופֿן אַ רשע גמור! אַלזאָ: דעם תניא׳ס בינוני — האָט קיינמאָל נישט געטאָן אַן עבירה, און וועט קיינמאָל נישט טאָן. ער קעמפֿט שטענדיק מיט זײַן יצר הרע.",
+                  "aramaic_words": [
+                    {
+                      "a": "וְהָרַמְבַּ\"ם",
+                      "en": "and the Rambam",
+                      "yi": "און דער רמב\"ם"
+                    },
+                    {
+                      "a": "פֵּרֵשׁ",
+                      "en": "explained",
+                      "yi": "האָט דערקלערט"
+                    },
+                    {
+                      "a": "בְּהִלְכוֹת תְּשׁוּבָה",
+                      "en": "in Hilchot Teshuvah",
+                      "yi": "אין הלכות תשובה"
+                    },
+                    {
+                      "a": "מַחֲצָה זְכוּיוֹת",
+                      "en": "half merits",
+                      "yi": "האַלב זכותים"
+                    },
+                    {
+                      "a": "וּמַחֲצָה עֲוֹנוֹת",
+                      "en": "and half sins",
+                      "yi": "און האַלב עוונות"
+                    },
+                    {
+                      "a": "אַךְ קָשֶׁה",
+                      "en": "but it is difficult",
+                      "yi": "אָבער ס׳איז שווער"
+                    },
+                    {
+                      "a": "אִם כֵּן",
+                      "en": "if so",
+                      "yi": "אויב אַזוי"
+                    },
+                    {
+                      "a": "הָוֵה לֵיהּ לְמִתְנֵי",
+                      "en": "he should have taught",
+                      "yi": "וואָלט ער געדאַרפֿט לערנען"
+                    },
+                    {
+                      "a": "שִׁבְעָה חֲלוּקוֹת",
+                      "en": "seven categories",
+                      "yi": "זיבן חלוקות"
+                    },
+                    {
+                      "a": "וְעוֹד",
+                      "en": "and furthermore",
+                      "yi": "און נאָך"
+                    },
+                    {
+                      "a": "שֶׁעָבַר עֲבֵרָה",
+                      "en": "who committed a sin",
+                      "yi": "וואָס האָט געטאָן אַן עבירה"
+                    },
+                    {
+                      "a": "נִקְרָא",
+                      "en": "is called",
+                      "yi": "ווערט גערופֿן"
+                    },
+                    {
+                      "a": "רָשָׁע גָּמוּר",
+                      "en": "a complete Rasha",
+                      "yi": "אַ רשע גמור"
+                    },
+                    {
+                      "a": "אֶלָּא וַדַּאי",
+                      "en": "rather certainly",
+                      "yi": "נאָר זיכער"
+                    },
+                    {
+                      "a": "בֵּינוֹנִי דְּתַנְיָא",
+                      "en": "the Beinoni of Tanya",
+                      "yi": "דעם תניא׳ס בינוני"
+                    },
+                    {
+                      "a": "לֹא עָבַר עֲבֵרָה",
+                      "en": "has not sinned",
+                      "yi": "האָט נישט געטאָן אַן עבירה"
+                    },
+                    {
+                      "a": "מִיָּמָיו",
+                      "en": "in his life",
+                      "yi": "אין זײַן לעבן"
+                    },
+                    {
+                      "a": "וְלֹא יַעֲבֹר",
+                      "en": "and will not sin",
+                      "yi": "און וועט נישט טאָן"
+                    },
+                    {
+                      "a": "נִלְחָם תָּמִיד",
+                      "en": "fights constantly",
+                      "yi": "קעמפֿט שטענדיק"
+                    },
+                    {
+                      "a": "עִם יִצְרוֹ",
+                      "en": "with his Yetzer Hara",
+                      "yi": "מיט זײַן יצר הרע"
+                    }
+                  ]
                 }
               ]
             },
@@ -5182,7 +5467,67 @@
                   "tosfos": "",
                   "tosfos_yiddish": "",
                   "tosfos_explanation": "",
-                  "tosfos_explanation_yiddish": ""
+                  "tosfos_explanation_yiddish": "",
+                  "aramaic": "וְנֶפֶשׁ הַשֵּׁנִית בְּיִשְׂרָאֵל הִיא חֵלֶק אֱלוֹהַּ מִמַּעַל מַמָּשׁ. וְהִיא מִתְלַבֶּשֶׁת בַּגּוּף וּמְחַיָּה אוֹתוֹ. וְזוֹ הִיא הַנֶּפֶשׁ הָאֱלֹקִית, וְלֹא רַק שֶׁל יְהוּדִי גָּדוֹל אוֹ קָטָן, אֶלָּא שֶׁל כָּל יְהוּדִי בְּלִי הֶבְדֵּל.",
+                  "aramaic_translation": "And the second soul in a Jew is literally a part of God Above. It clothes itself in the body and gives it life. This is the Divine Soul — not only of a great or small Jew, but of every Jew without distinction.",
+                  "aramaic_translation_yiddish": "און די צווייטע נשמה אין אַ ייִדן איז ממש אַ חלק פֿון השם פֿון אויבן. זי באַקליידעט זיך אין דעם גוף און באַלעבט אים. דאָס איז די געטלעכע נשמה — נישט נאָר פֿון אַ גרויסן אָדער קליינעם ייִדן, נאָר פֿון יעדן ייִדן אָן אונטערשייד.",
+                  "aramaic_words": [
+                    {
+                      "a": "וְנֶפֶשׁ הַשֵּׁנִית",
+                      "en": "and the second soul",
+                      "yi": "און די צווייטע נשמה"
+                    },
+                    {
+                      "a": "בְּיִשְׂרָאֵל",
+                      "en": "in a Jew",
+                      "yi": "אין אַ ייִדן"
+                    },
+                    {
+                      "a": "חֵלֶק אֱלוֹהַּ",
+                      "en": "a part of God",
+                      "yi": "אַ חלק פֿון השם"
+                    },
+                    {
+                      "a": "מִמַּעַל",
+                      "en": "from Above",
+                      "yi": "פֿון אויבן"
+                    },
+                    {
+                      "a": "מַמָּשׁ",
+                      "en": "literally",
+                      "yi": "ממש"
+                    },
+                    {
+                      "a": "מִתְלַבֶּשֶׁת",
+                      "en": "clothes itself",
+                      "yi": "באַקליידעט זיך"
+                    },
+                    {
+                      "a": "בַּגּוּף",
+                      "en": "in the body",
+                      "yi": "אין דעם גוף"
+                    },
+                    {
+                      "a": "וּמְחַיָּה",
+                      "en": "and gives life",
+                      "yi": "און באַלעבט"
+                    },
+                    {
+                      "a": "הַנֶּפֶשׁ הָאֱלֹקִית",
+                      "en": "the Divine soul",
+                      "yi": "די געטלעכע נשמה"
+                    },
+                    {
+                      "a": "גָּדוֹל אוֹ קָטָן",
+                      "en": "great or small",
+                      "yi": "גרויסער אָדער קלענערער"
+                    },
+                    {
+                      "a": "בְּלִי הֶבְדֵּל",
+                      "en": "without distinction",
+                      "yi": "אָן אונטערשייד"
+                    }
+                  ]
                 },
                 {
                   "id": "tanya-ch2-s2",
@@ -5222,7 +5567,82 @@
                   "tosfos": "",
                   "tosfos_yiddish": "",
                   "tosfos_explanation": "",
-                  "tosfos_explanation_yiddish": ""
+                  "tosfos_explanation_yiddish": "",
+                  "aramaic": "כְּמוֹ שֶׁכָּתוּב: וַיִּפַּח בְּאַפָּיו נִשְׁמַת חַיִּים. וְאַתָּה נְפַחְתָּהּ בִּי. וְאָמְרוּ בַּזוֹהַר: מַאן דְּנָפַח, מִתּוֹכֵיהּ נָפַח. כְּלוֹמַר, הַנְּפִיחָה בָּאָה מִפְּנִימִיּוּתוֹ שֶׁל הַנּוֹפֵחַ. וּמִכָּאן שֶׁהַנְּשָׁמָה נִמְשֶׁכֶת מִפְּנִימִיּוּתוֹ יִתְבָּרֵךְ.",
+                  "aramaic_translation": "As it is written: 'And He breathed into his nostrils a soul of life,' and 'You blew it into me.' The Zohar says: One who blows, blows from within himself. That is — the breath comes from the innermost being of the blower. From here we learn that the soul is drawn from God's innermost essence.",
+                  "aramaic_translation_yiddish": "ווי עס שטייט: 'ויפח באפיו נשמת חיים,' און 'ואתה נפחתה בי.' דער זוהר זאָגט: מאן דנפח מתוכיה נפח. הייסט עס, די בלאָז קומט פֿון דעם בלאָזער׳ס פּנימיות. פֿון דעם לערנען מיר אַז די נשמה ווערט אַראָפּגעצויגן פֿון השם׳ס פּנימיות.",
+                  "aramaic_words": [
+                    {
+                      "a": "כְּמוֹ שֶׁכָּתוּב",
+                      "en": "as it is written",
+                      "yi": "ווי עס שטייט"
+                    },
+                    {
+                      "a": "וַיִּפַּח",
+                      "en": "and He breathed",
+                      "yi": "און ער האָט אַרײַנגעבלאָזן"
+                    },
+                    {
+                      "a": "בְּאַפָּיו",
+                      "en": "into his nostrils",
+                      "yi": "אין זײַנע נאָז־לעכלעך"
+                    },
+                    {
+                      "a": "נִשְׁמַת חַיִּים",
+                      "en": "a soul of life",
+                      "yi": "אַ נשמה פֿון לעבן"
+                    },
+                    {
+                      "a": "וְאַתָּה נְפַחְתָּהּ בִּי",
+                      "en": "You blew it into me",
+                      "yi": "און דו האָסט עס אַרײַנגעבלאָזן אין מיר"
+                    },
+                    {
+                      "a": "בַּזוֹהַר",
+                      "en": "in the Zohar",
+                      "yi": "אין דעם זוהר"
+                    },
+                    {
+                      "a": "מַאן דְּנָפַח",
+                      "en": "one who blows",
+                      "yi": "דער וואָס בלאָזט"
+                    },
+                    {
+                      "a": "מִתּוֹכֵיהּ",
+                      "en": "from within himself",
+                      "yi": "פֿון זיך אינווייניק"
+                    },
+                    {
+                      "a": "נָפַח",
+                      "en": "blows",
+                      "yi": "בלאָזט"
+                    },
+                    {
+                      "a": "כְּלוֹמַר",
+                      "en": "that is to say",
+                      "yi": "הייסט עס"
+                    },
+                    {
+                      "a": "מִפְּנִימִיּוּתוֹ",
+                      "en": "from his innermost",
+                      "yi": "פֿון זײַן פּנימיות"
+                    },
+                    {
+                      "a": "הַנּוֹפֵחַ",
+                      "en": "the blower",
+                      "yi": "דער בלאָזער"
+                    },
+                    {
+                      "a": "נִמְשֶׁכֶת",
+                      "en": "is drawn",
+                      "yi": "ווערט אַראָפּגעצויגן"
+                    },
+                    {
+                      "a": "יִתְבָּרֵךְ",
+                      "en": "(of God) blessed-be-He",
+                      "yi": "פֿון השם יתברך"
+                    }
+                  ]
                 },
                 {
                   "id": "tanya-ch2-s3",
@@ -5262,7 +5682,77 @@
                   "tosfos": "",
                   "tosfos_yiddish": "",
                   "tosfos_explanation": "",
-                  "tosfos_explanation_yiddish": ""
+                  "tosfos_explanation_yiddish": "",
+                  "aramaic": "וְשֹׁרֶשׁ הַנֶּפֶשׁ הָאֱלֹקִית הוּא בַּחֲכָמָה דַּאֲצִילוּת — הַמַּדְרֵגָה הַגְּבוֹהָה בְּיוֹתֵר בְּעוֹלַם הָאֲצִילוּת. אַף נֶפֶשׁ פְּשׁוּטָה שֶׁל יְהוּדִי בְּחַיֵּי יוֹם יוֹם — שָׁרְשָׁהּ שָׁם. וּמִשּׁוּם כָּךְ כָּל יְהוּדִי קָשׁוּר בְּמַהוּתוֹ עִם הַקָּדוֹשׁ בָּרוּךְ הוּא, וּלְעוֹלָם לֹא יִנָּתֵק.",
+                  "aramaic_translation": "The root of the Divine Soul is in Chochmah of Atzilus — the highest level in the world of Atzilus. Even the simple soul of a Jew in his daily life is rooted there. Therefore every Jew is essentially bound up with the Holy One blessed be He, and can never be cut off.",
+                  "aramaic_translation_yiddish": "דער שורש פֿון דער געטלעכער נשמה איז אין חכמה דאצילות — די העכסטע מדרגה אין דער וועלט פֿון אצילות. אַפֿילו די פּשוטע נשמה פֿון אַ ייִדן אין טאָגיק לעבן — איר שורש איז דאָרט. דערפֿאַר איז יעדער ייִד אין זײַן עצם פֿאַרבונדן מיט דעם הייליקן ברוך הוא, און וועט קיינמאָל נישט אָפּגעריסן ווערן.",
+                  "aramaic_words": [
+                    {
+                      "a": "וְשֹׁרֶשׁ",
+                      "en": "and the root",
+                      "yi": "און דער שורש"
+                    },
+                    {
+                      "a": "הַנֶּפֶשׁ הָאֱלֹקִית",
+                      "en": "the Divine soul",
+                      "yi": "פֿון דער געטלעכער נשמה"
+                    },
+                    {
+                      "a": "בַּחֲכָמָה דַּאֲצִילוּת",
+                      "en": "in Chochmah of Atzilus",
+                      "yi": "אין חכמה דאצילות"
+                    },
+                    {
+                      "a": "הַמַּדְרֵגָה הַגְּבוֹהָה",
+                      "en": "the high level",
+                      "yi": "די העכסטע מדרגה"
+                    },
+                    {
+                      "a": "בְּיוֹתֵר",
+                      "en": "the most",
+                      "yi": "בעסטענס"
+                    },
+                    {
+                      "a": "בְּעוֹלַם הָאֲצִילוּת",
+                      "en": "in the world of Atzilus",
+                      "yi": "אין דער וועלט פֿון אצילות"
+                    },
+                    {
+                      "a": "אַף נֶפֶשׁ פְּשׁוּטָה",
+                      "en": "even a simple soul",
+                      "yi": "אַפֿילו אַ פּשוטע נשמה"
+                    },
+                    {
+                      "a": "בְּחַיֵּי יוֹם יוֹם",
+                      "en": "in daily life",
+                      "yi": "אין טאָגיק לעבן"
+                    },
+                    {
+                      "a": "שָׁרְשָׁהּ שָׁם",
+                      "en": "its root is there",
+                      "yi": "איר שורש איז דאָרט"
+                    },
+                    {
+                      "a": "מִשּׁוּם כָּךְ",
+                      "en": "therefore",
+                      "yi": "דערפֿאַר"
+                    },
+                    {
+                      "a": "קָשׁוּר בְּמַהוּתוֹ",
+                      "en": "bound in his essence",
+                      "yi": "פֿאַרבונדן אין זײַן עצם"
+                    },
+                    {
+                      "a": "הַקָּדוֹשׁ בָּרוּךְ הוּא",
+                      "en": "the Holy One blessed be He",
+                      "yi": "דעם הייליקן ברוך הוא"
+                    },
+                    {
+                      "a": "לֹא יִנָּתֵק",
+                      "en": "will not be cut off",
+                      "yi": "וועט נישט אָפּגעריסן ווערן"
+                    }
+                  ]
                 }
               ]
             },
@@ -5391,7 +5881,72 @@
                   "tosfos": "",
                   "tosfos_yiddish": "",
                   "tosfos_explanation": "",
-                  "tosfos_explanation_yiddish": ""
+                  "tosfos_explanation_yiddish": "",
+                  "aramaic": "וְכָל בְּחִינָה וּמַדְרֵגָה מִשְּׁלֹשׁ אֵלֶּה — נֶפֶשׁ רוּחַ וּנְשָׁמָה — יֵשׁ בָּהּ עֶשֶׂר בְּחִינוֹת, כְּנֶגֶד עֶשֶׂר סְפִירוֹת עֶלְיוֹנוֹת שֶׁנִּשְׁתַּלְשְׁלוּ מֵהֶן. וְנֶחֱלָקוֹת לִשְׁתַּיִם: שֶׁהֵן שֵׂכֶל וּמִדּוֹת.",
+                  "aramaic_translation": "Each level of these three — Nefesh, Ruach, Neshamah — contains ten faculties, corresponding to the ten supernal Sefiros from which they descended. They divide into two: intellect (Sechel) and emotions (Midos).",
+                  "aramaic_translation_yiddish": "יעדע דרגה פֿון די דרײַ — נפש, רוח, נשמה — האָט צען כוחות, קעגן די צען עליונע ספֿירות פֿון וועלכע זיי קומען אַראָפּ. זיי טיילן זיך אין צוויי: שכל און מידות.",
+                  "aramaic_words": [
+                    {
+                      "a": "וְכָל בְּחִינָה",
+                      "en": "and each aspect",
+                      "yi": "און יעדע בחינה"
+                    },
+                    {
+                      "a": "וּמַדְרֵגָה",
+                      "en": "and level",
+                      "yi": "און דרגה"
+                    },
+                    {
+                      "a": "מִשְּׁלֹשׁ אֵלֶּה",
+                      "en": "of these three",
+                      "yi": "פֿון די דרײַ"
+                    },
+                    {
+                      "a": "נֶפֶשׁ רוּחַ וּנְשָׁמָה",
+                      "en": "Nefesh, Ruach, Neshamah",
+                      "yi": "נפש, רוח, נשמה"
+                    },
+                    {
+                      "a": "עֶשֶׂר בְּחִינוֹת",
+                      "en": "ten faculties",
+                      "yi": "צען כוחות"
+                    },
+                    {
+                      "a": "כְּנֶגֶד",
+                      "en": "corresponding to",
+                      "yi": "קעגן"
+                    },
+                    {
+                      "a": "עֶשֶׂר סְפִירוֹת",
+                      "en": "ten Sefiros",
+                      "yi": "צען ספֿירות"
+                    },
+                    {
+                      "a": "עֶלְיוֹנוֹת",
+                      "en": "supernal",
+                      "yi": "עליונע"
+                    },
+                    {
+                      "a": "נִשְׁתַּלְשְׁלוּ מֵהֶן",
+                      "en": "descended from them",
+                      "yi": "זענען אַראָפּגעקומען פֿון זיי"
+                    },
+                    {
+                      "a": "וְנֶחֱלָקוֹת",
+                      "en": "and they divide",
+                      "yi": "און טיילן זיך"
+                    },
+                    {
+                      "a": "לִשְׁתַּיִם",
+                      "en": "into two",
+                      "yi": "אין צוויי"
+                    },
+                    {
+                      "a": "שֵׂכֶל וּמִדּוֹת",
+                      "en": "intellect and emotions",
+                      "yi": "שכל און מידות"
+                    }
+                  ]
                 },
                 {
                   "id": "tanya-ch3-s2",
@@ -5431,7 +5986,77 @@
                   "tosfos": "",
                   "tosfos_yiddish": "",
                   "tosfos_explanation": "",
-                  "tosfos_explanation_yiddish": ""
+                  "tosfos_explanation_yiddish": "",
+                  "aramaic": "הַשֵּׂכֶל כּוֹלֵל חָכְמָה, בִּינָה וְדַעַת — וְהֵן הַנִּקְרָאוֹת חָבַ\"ד. חָכְמָה — הַבָּרָק הָרִאשׁוֹן שֶׁל הָרַעְיוֹן. בִּינָה — הִתְבּוֹנְנוּת וְהַרְחָבָה שֶׁל אוֹתָהּ הָרַעְיוֹן. דַּעַת — הִתְקַשְּׁרוּת פְּנִימִית, שֶׁהַשֵּׂכֶל יִכָּנֵס לְלֵב הָאָדָם וְיַשְׁפִּיעַ עַל מַעֲשָׂיו.",
+                  "aramaic_translation": "The intellect includes Chochmah, Binah, and Daas — called ChaBaD. Chochmah is the first flash of an idea. Binah is contemplation and expansion of that idea. Daas is internal bonding — the intellect must enter the heart and shape one's actions.",
+                  "aramaic_translation_yiddish": "דער שכל נעמט אַרײַן חכמה, בינה און דעת — וואָס הייסן חב\"ד. חכמה — דער ערשטער בליץ פֿון אַ געדאַנק. בינה — אַ באַטראַכטונג און פֿאַרברייטערונג פֿון דעם זעלביקן געדאַנק. דעת — אַ פּנימיותדיקע פֿאַרבינדונג, אַז דער שכל זאָל אַרײַנקומען אין דעם האַרץ און באַווירקן די מעשים.",
+                  "aramaic_words": [
+                    {
+                      "a": "הַשֵּׂכֶל",
+                      "en": "the intellect",
+                      "yi": "דער שכל"
+                    },
+                    {
+                      "a": "כּוֹלֵל",
+                      "en": "includes",
+                      "yi": "נעמט אַרײַן"
+                    },
+                    {
+                      "a": "חָכְמָה בִּינָה וְדַעַת",
+                      "en": "Chochmah, Binah, Daas",
+                      "yi": "חכמה, בינה, דעת"
+                    },
+                    {
+                      "a": "הַנִּקְרָאוֹת",
+                      "en": "called",
+                      "yi": "וואָס הייסן"
+                    },
+                    {
+                      "a": "חָבַ\"ד",
+                      "en": "ChaBaD",
+                      "yi": "חב\"ד"
+                    },
+                    {
+                      "a": "הַבָּרָק הָרִאשׁוֹן",
+                      "en": "the first flash",
+                      "yi": "דער ערשטער בליץ"
+                    },
+                    {
+                      "a": "שֶׁל הָרַעְיוֹן",
+                      "en": "of the idea",
+                      "yi": "פֿון דעם געדאַנק"
+                    },
+                    {
+                      "a": "הִתְבּוֹנְנוּת",
+                      "en": "contemplation",
+                      "yi": "אַ באַטראַכטונג"
+                    },
+                    {
+                      "a": "וְהַרְחָבָה",
+                      "en": "and expansion",
+                      "yi": "און פֿאַרברייטערונג"
+                    },
+                    {
+                      "a": "הִתְקַשְּׁרוּת פְּנִימִית",
+                      "en": "internal bonding",
+                      "yi": "פּנימיותדיקע פֿאַרבינדונג"
+                    },
+                    {
+                      "a": "יִכָּנֵס לְלֵב",
+                      "en": "enters the heart",
+                      "yi": "גייט אַרײַן אין דעם האַרץ"
+                    },
+                    {
+                      "a": "וְיַשְׁפִּיעַ",
+                      "en": "and influences",
+                      "yi": "און באַווירקט"
+                    },
+                    {
+                      "a": "עַל מַעֲשָׂיו",
+                      "en": "his actions",
+                      "yi": "די מעשים"
+                    }
+                  ]
                 },
                 {
                   "id": "tanya-ch3-s3",
@@ -5471,7 +6096,102 @@
                   "tosfos": "",
                   "tosfos_yiddish": "",
                   "tosfos_explanation": "",
-                  "tosfos_explanation_yiddish": ""
+                  "tosfos_explanation_yiddish": "",
+                  "aramaic": "וְשִׁבְעַת הַמִּדּוֹת הֵן: חֶסֶד, גְּבוּרָה, תִּפְאֶרֶת, נֶצַח, הוֹד, יְסוֹד וּמַלְכוּת. הֵן יוֹצְאוֹת מִן הַשֵּׂכֶל בְּדֶרֶךְ הִשְׁתַּלְשְׁלוּת — מַה שֶּׁהַשֵּׂכֶל מַבִּין וְקוֹלֵט, הַלֵּב סוֹף סוֹף מַרְגִּישׁ. וְזֶהוּ יְסוֹד עֲבוֹדַת חַסִּידוּת חָבַ\"ד.",
+                  "aramaic_translation": "The seven Midos are: Chesed, Gevurah, Tiferes, Netzach, Hod, Yesod, and Malchus. They emerge from the intellect through a process of descent — what the mind understands and absorbs, the heart eventually feels. This is the foundation of Chabad Chassidic service.",
+                  "aramaic_translation_yiddish": "די זיבן מידות זענען: חסד, גבורה, תפארת, נצח, הוד, יסוד, און מלכות. זיי קומען אַרויס פֿון דעם שכל אין דרך פֿון השתלשלות — וואָס דער שכל פֿאַרשטייט און נעמט אויף, פֿילט סוף־כל־סוף דאָס האַרץ. דאָס איז דער יסוד פֿון חב\"ד חסידות עבודה.",
+                  "aramaic_words": [
+                    {
+                      "a": "וְשִׁבְעַת",
+                      "en": "and the seven",
+                      "yi": "און די זיבן"
+                    },
+                    {
+                      "a": "הַמִּדּוֹת",
+                      "en": "the Midos",
+                      "yi": "די מידות"
+                    },
+                    {
+                      "a": "חֶסֶד",
+                      "en": "Chesed (kindness)",
+                      "yi": "חסד"
+                    },
+                    {
+                      "a": "גְּבוּרָה",
+                      "en": "Gevurah (might)",
+                      "yi": "גבורה"
+                    },
+                    {
+                      "a": "תִּפְאֶרֶת",
+                      "en": "Tiferes (harmony)",
+                      "yi": "תפארת"
+                    },
+                    {
+                      "a": "נֶצַח",
+                      "en": "Netzach (perseverance)",
+                      "yi": "נצח"
+                    },
+                    {
+                      "a": "הוֹד",
+                      "en": "Hod (humility)",
+                      "yi": "הוד"
+                    },
+                    {
+                      "a": "יְסוֹד",
+                      "en": "Yesod (bonding)",
+                      "yi": "יסוד"
+                    },
+                    {
+                      "a": "וּמַלְכוּת",
+                      "en": "and Malchus (kingship)",
+                      "yi": "און מלכות"
+                    },
+                    {
+                      "a": "יוֹצְאוֹת",
+                      "en": "emerge",
+                      "yi": "קומען אַרויס"
+                    },
+                    {
+                      "a": "מִן הַשֵּׂכֶל",
+                      "en": "from the intellect",
+                      "yi": "פֿון דעם שכל"
+                    },
+                    {
+                      "a": "בְּדֶרֶךְ הִשְׁתַּלְשְׁלוּת",
+                      "en": "through descent",
+                      "yi": "דורך השתלשלות"
+                    },
+                    {
+                      "a": "מַבִּין",
+                      "en": "understands",
+                      "yi": "פֿאַרשטייט"
+                    },
+                    {
+                      "a": "וְקוֹלֵט",
+                      "en": "and absorbs",
+                      "yi": "און נעמט אויף"
+                    },
+                    {
+                      "a": "הַלֵּב סוֹף סוֹף",
+                      "en": "the heart eventually",
+                      "yi": "דאָס האַרץ סוף־כל־סוף"
+                    },
+                    {
+                      "a": "מַרְגִּישׁ",
+                      "en": "feels",
+                      "yi": "פֿילט"
+                    },
+                    {
+                      "a": "יְסוֹד עֲבוֹדַת",
+                      "en": "foundation of the service",
+                      "yi": "יסוד פֿון דער עבודה"
+                    },
+                    {
+                      "a": "חַסִּידוּת חָבַ\"ד",
+                      "en": "Chabad Chassidus",
+                      "yi": "חב\"ד חסידות"
+                    }
+                  ]
                 }
               ]
             }
