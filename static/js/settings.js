@@ -25,6 +25,7 @@
     weakSpots: true,
     smartDailyReview: true,
     chazaraMode: true,
+    dailyPlan: true,
     // Commentary
     showRashi: true,
     showTosfos: true,
@@ -94,7 +95,8 @@
             ["mistakesList", "mistakes_list"],
             ["weakSpots", "weak_spots"],
             ["smartDailyReview", "smart_review"],
-            ["chazaraMode", "chazara_mode"]
+            ["chazaraMode", "chazara_mode"],
+            ["dailyPlan", "daily_plan_setting"]
           ]
         },
         {

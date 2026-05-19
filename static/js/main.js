@@ -214,6 +214,7 @@
     if (SETTINGS.get("readAloud") || true) html += '<button class="card-action-btn" data-action="speak" title="Read aloud">🔊</button>';
     if (SETTINGS.get("bookmarks") && sugyaId) html += '<button class="card-action-btn" data-action="bookmark" title="Bookmark">' + (bookmarked ? "🔖" : "📑") + '</button>';
     if (SETTINGS.get("notes") && sugyaId) html += '<button class="card-action-btn" data-action="note" title="Add note">' + (hasNote ? "📝✓" : "📝") + '</button>';
+    if (sugyaId) html += '<button class="card-action-btn" data-action="share" title="Share">📤</button>';
     html += '</div>';
     html += '<div class="notes-area hidden" data-notes-area></div>';
     return html;
@@ -239,18 +240,26 @@
             area.classList.remove("hidden");
             const existing = PROGRESS.getNote(sugyaId, sectionId);
             area.innerHTML =
-              '<textarea placeholder="..." data-note-input>' + escapeHtml(existing) + '</textarea>' +
+              '<div class="notes-controls"><textarea placeholder="..." data-note-input>' + escapeHtml(existing) + '</textarea>' +
+              '<button class="card-action-btn voice-mic-btn" data-voice-mic title="Voice input">🎤</button></div>' +
               '<div style="text-align:end;margin-top:6px"><button class="primary-btn" data-note-save>' + I18N.t("save_note") + '</button></div>';
+            const ta = area.querySelector("[data-note-input]");
+            const mic = area.querySelector("[data-voice-mic]");
+            VOICE.attachToTextarea(ta, mic);
             area.querySelector("[data-note-save]").addEventListener("click", () => {
-              const txt = area.querySelector("[data-note-input]").value;
+              VOICE.stop();
+              const txt = ta.value;
               PROGRESS.saveNote(sugyaId, sectionId, txt);
               showToast(I18N.t("settings_saved"));
               area.classList.add("hidden");
               btn.textContent = txt ? "📝✓" : "📝";
             });
           } else {
+            VOICE.stop();
             area.classList.add("hidden");
           }
+        } else if (a === "share") {
+          if (CURRENT_SUGYA) SHARE.shareSugya(CURRENT_SUGYA);
         }
       });
     });
@@ -281,6 +290,7 @@
         const res = await fetch(url);
         if (!res.ok) continue;
         CONTENT = await res.json();
+        if (typeof window.cacheContent === "function") window.cacheContent(CONTENT);
         return CONTENT;
       } catch (e) { /* try next */ }
     }
@@ -895,6 +905,8 @@
     wireTypeChips();
 
     await loadContent();
+    if (window.cacheContent) window.cacheContent(CONTENT);
+    SEARCH.init();
 
     if (PROGRESS.state.currentSugyaId) {
       const found = findSugya(PROGRESS.state.currentSugyaId);
@@ -909,6 +921,7 @@
 
       renderWeeklyRecap();
       renderContinueWhere();
+      DAILY.render("daily-plan-wrap");
       renderDueButton();
 
       document.getElementById("resume-btn").addEventListener("click", () => {

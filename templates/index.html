@@ -26,6 +26,7 @@
       <button id="mistakes-btn" class="icon-btn" aria-label="Mistakes">📋</button>
       <button id="notes-btn" class="icon-btn" aria-label="Notes">📝</button>
       <button id="bookmarks-btn" class="icon-btn" aria-label="Bookmarks">🔖</button>
+      <button id="search-btn" class="icon-btn" aria-label="Search">🔍</button>
       <button id="feedback-btn" class="icon-btn" aria-label="Feedback">💬</button>
       <button id="settings-btn" class="icon-btn" aria-label="Settings">⚙️</button>
       <button id="lang-toggle" class="lang-btn" aria-label="Language">🌐</button>
@@ -131,6 +132,7 @@
       <p id="welcome-streak-msg" class="subtitle"></p>
       <div id="weekly-recap" class="weekly-recap-wrap"></div>
       <div id="continue-where" class="continue-where"></div>
+      <div id="daily-plan-wrap"></div>
       <div id="due-cards-btn-wrap"></div>
       <div class="big-buttons two-col">
         <button id="resume-btn" class="primary-btn" data-i18n="resume">Resume</button>
@@ -202,6 +204,20 @@
   <!-- Word popup -->
   <div id="word-popup" class="word-popup hidden"></div>
 
+  <!-- Search overlay -->
+  <div id="search-overlay" class="settings-overlay hidden">
+    <div class="settings-modal" style="max-width:680px">
+      <div class="settings-header">
+        <h2>🔍 <span data-i18n="search_title">Search</span></h2>
+        <button id="search-close" class="close-btn">×</button>
+      </div>
+      <div class="settings-body">
+        <input id="search-input" type="search" class="search-input" placeholder="Type to search…" />
+        <div id="search-results" class="search-results"></div>
+      </div>
+    </div>
+  </div>
+
   <!-- Feedback overlay -->
   <div id="feedback-overlay" class="settings-overlay hidden">
     <div class="settings-modal" style="max-width:520px">
@@ -254,6 +270,7 @@
   <script src="/static/js/modes/flashcard.js"></script>
   <script src="/static/js/modes/story.js"></script>
   <script src="/static/js/modes/plainread.js"></script>
+  <script src="/static/js/features-v5.js"></script>
   <script src="/static/js/main.js"></script>
 </body>
 </html>

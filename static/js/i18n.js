@@ -189,7 +189,12 @@
       plainread_explanation: "💭 Explanation",
       plainread_rashi: "Rashi",
       previous: "Previous",
-      review_quiz: "Review with a quiz"
+      review_quiz: "Review with a quiz",
+      search_title: "Search",
+      search_no_results: "No matches found.",
+      search_hits: "matches",
+      daily_plan_title: "Today's plan",
+      daily_plan_setting: "Daily plan on welcome-back"
     },
     yi: {
       app_title: "ברכות / שבת טוטאָר",
@@ -375,7 +380,12 @@
       plainread_explanation: "💭 דערקלערונג",
       plainread_rashi: "ראַשי",
       previous: "פֿריִער",
-      review_quiz: "וויסע אַ קעשיא־וויקטאָרינע"
+      review_quiz: "וויסע אַ קעשיא־וויקטאָרינע",
+      search_title: "זוכן",
+      search_no_results: "ניטאָ קיין מאַטשעס.",
+      search_hits: "מאַטשעס",
+      daily_plan_title: "הײַנטיקער פּלאַן",
+      daily_plan_setting: "טאָגיקער פּלאַן אויף ברוכים הבאים"
     }
   };
 
