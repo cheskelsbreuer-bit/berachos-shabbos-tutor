@@ -6216,51 +6216,15 @@
           "name_en_yiddish": "די זיבן טעג פֿון באַשאַף",
           "sugyos": [
             {
-              "id": "ber-1-1",
-              "daf": "1:1",
-              "title": "Bereishis 1:1",
-              "title_yiddish": "בראשית א׳:1",
+              "id": "chumash-bereishis-p1",
+              "daf": "Perek 1",
+              "title": "Bereishis Perek 1",
+              "title_yiddish": "בראשית פּרק 1",
               "illustration": "scroll",
-              "aramaic": "בְּרֵאשִׁית בָּרָא אֱלֹהִים אֵת הַשָּׁמַיִם וְאֵת הָאָרֶץ.",
-              "aramaic_translation": "In the beginning, God created the heavens and the earth.",
-              "aramaic_translation_yiddish": "אין אָנהייב האָט גאָט באַשאַפֿן דעם הימל און די ערד.",
-              "aramaic_words": [
-                {
-                  "a": "בְּרֵאשִׁית",
-                  "en": "in the beginning",
-                  "yi": "אין אָנהייב"
-                },
-                {
-                  "a": "בָּרָא",
-                  "en": "created",
-                  "yi": "האָט באַשאַפֿן"
-                },
-                {
-                  "a": "אֱלֹהִים",
-                  "en": "God",
-                  "yi": "גאָט"
-                },
-                {
-                  "a": "אֵת",
-                  "en": "(direct-object marker)",
-                  "yi": "(ניצט פֿאַר אַ ספּעציפֿישן אָביעקט)"
-                },
-                {
-                  "a": "הַשָּׁמַיִם",
-                  "en": "the heavens",
-                  "yi": "דעם הימל"
-                },
-                {
-                  "a": "וְאֵת",
-                  "en": "and (direct-object)",
-                  "yi": "און (ניצט פֿאַר ספּעציפֿישן אָביעקט)"
-                },
-                {
-                  "a": "הָאָרֶץ",
-                  "en": "the earth",
-                  "yi": "די ערד"
-                }
-              ],
+              "aramaic": "",
+              "aramaic_translation": "",
+              "aramaic_translation_yiddish": "",
+              "aramaic_words": [],
               "sections": [
                 {
                   "id": "ber-1-1-s1",
@@ -6284,72 +6248,49 @@
                   "tosfos": "",
                   "tosfos_yiddish": "",
                   "tosfos_explanation": "",
-                  "tosfos_explanation_yiddish": ""
-                }
-              ]
-            },
-            {
-              "id": "ber-1-2",
-              "daf": "1:2",
-              "title": "Bereishis 1:2",
-              "title_yiddish": "בראשית א׳:2",
-              "illustration": "scroll",
-              "aramaic": "וְהָאָרֶץ הָיְתָה תֹהוּ וָבֹהוּ וְחֹשֶׁךְ עַל פְּנֵי תְהוֹם וְרוּחַ אֱלֹהִים מְרַחֶפֶת עַל פְּנֵי הַמָּיִם.",
-              "aramaic_translation": "And the earth was empty and chaotic, and darkness covered the deep, and the spirit of God hovered over the waters.",
-              "aramaic_translation_yiddish": "און די ערד איז געווען וויסט און פּוסט, און פֿינצטערניש איבער דעם תּהום, און דער גײַסט פֿון גאָט האָט געשוועבט איבער די וואַסערן.",
-              "aramaic_words": [
-                {
-                  "a": "וְהָאָרֶץ",
-                  "en": "and the earth",
-                  "yi": "און די ערד"
+                  "tosfos_explanation_yiddish": "",
+                  "aramaic": "בְּרֵאשִׁית בָּרָא אֱלֹהִים אֵת הַשָּׁמַיִם וְאֵת הָאָרֶץ.",
+                  "aramaic_translation": "In the beginning, God created the heavens and the earth.",
+                  "aramaic_translation_yiddish": "אין אָנהייב האָט גאָט באַשאַפֿן דעם הימל און די ערד.",
+                  "aramaic_words": [
+                    {
+                      "a": "בְּרֵאשִׁית",
+                      "en": "in the beginning",
+                      "yi": "אין אָנהייב"
+                    },
+                    {
+                      "a": "בָּרָא",
+                      "en": "created",
+                      "yi": "האָט באַשאַפֿן"
+                    },
+                    {
+                      "a": "אֱלֹהִים",
+                      "en": "God",
+                      "yi": "גאָט"
+                    },
+                    {
+                      "a": "אֵת",
+                      "en": "(direct-object marker)",
+                      "yi": "(ניצט פֿאַר אַ ספּעציפֿישן אָביעקט)"
+                    },
+                    {
+                      "a": "הַשָּׁמַיִם",
+                      "en": "the heavens",
+                      "yi": "דעם הימל"
+                    },
+                    {
+                      "a": "וְאֵת",
+                      "en": "and (direct-object)",
+                      "yi": "און (ניצט פֿאַר ספּעציפֿישן אָביעקט)"
+                    },
+                    {
+                      "a": "הָאָרֶץ",
+                      "en": "the earth",
+                      "yi": "די ערד"
+                    }
+                  ],
+                  "marker": "1:1"
                 },
-                {
-                  "a": "הָיְתָה",
-                  "en": "was",
-                  "yi": "איז געווען"
-                },
-                {
-                  "a": "תֹהוּ",
-                  "en": "empty / formless",
-                  "yi": "וויסט / אָן פֿאָרעם"
-                },
-                {
-                  "a": "וָבֹהוּ",
-                  "en": "and void / chaotic",
-                  "yi": "און פּוסט / כאַאָטיש"
-                },
-                {
-                  "a": "וְחֹשֶׁךְ",
-                  "en": "and darkness",
-                  "yi": "און פֿינצטערניש"
-                },
-                {
-                  "a": "עַל פְּנֵי",
-                  "en": "over the face of",
-                  "yi": "איבער דעם פּנים פֿון"
-                },
-                {
-                  "a": "תְהוֹם",
-                  "en": "the deep / abyss",
-                  "yi": "דעם תּהום"
-                },
-                {
-                  "a": "וְרוּחַ אֱלֹהִים",
-                  "en": "and the spirit of God",
-                  "yi": "און דער גײַסט פֿון גאָט"
-                },
-                {
-                  "a": "מְרַחֶפֶת",
-                  "en": "hovered",
-                  "yi": "האָט געשוועבט"
-                },
-                {
-                  "a": "עַל פְּנֵי הַמָּיִם",
-                  "en": "over the waters",
-                  "yi": "איבער די וואַסערן"
-                }
-              ],
-              "sections": [
                 {
                   "id": "ber-1-2-s1",
                   "text": "Before creation took form, the earth existed as Tohu va'Vohu — chaos and emptiness. Darkness covered the cosmic deep, and the Divine Presence hovered over the primordial waters, ready to bring order.",
@@ -6372,47 +6313,64 @@
                   "tosfos": "",
                   "tosfos_yiddish": "",
                   "tosfos_explanation": "",
-                  "tosfos_explanation_yiddish": ""
-                }
-              ]
-            },
-            {
-              "id": "ber-1-3",
-              "daf": "1:3",
-              "title": "Bereishis 1:3",
-              "title_yiddish": "בראשית א׳:3",
-              "illustration": "scroll",
-              "aramaic": "וַיֹּאמֶר אֱלֹהִים יְהִי אוֹר וַיְהִי אוֹר.",
-              "aramaic_translation": "And God said: Let there be light — and there was light.",
-              "aramaic_translation_yiddish": "און גאָט האָט געזאָגט: זאָל זײַן ליכט — און עס איז געווען ליכט.",
-              "aramaic_words": [
-                {
-                  "a": "וַיֹּאמֶר",
-                  "en": "and (He) said",
-                  "yi": "און ער האָט געזאָגט"
+                  "tosfos_explanation_yiddish": "",
+                  "aramaic": "וְהָאָרֶץ הָיְתָה תֹהוּ וָבֹהוּ וְחֹשֶׁךְ עַל פְּנֵי תְהוֹם וְרוּחַ אֱלֹהִים מְרַחֶפֶת עַל פְּנֵי הַמָּיִם.",
+                  "aramaic_translation": "And the earth was empty and chaotic, and darkness covered the deep, and the spirit of God hovered over the waters.",
+                  "aramaic_translation_yiddish": "און די ערד איז געווען וויסט און פּוסט, און פֿינצטערניש איבער דעם תּהום, און דער גײַסט פֿון גאָט האָט געשוועבט איבער די וואַסערן.",
+                  "aramaic_words": [
+                    {
+                      "a": "וְהָאָרֶץ",
+                      "en": "and the earth",
+                      "yi": "און די ערד"
+                    },
+                    {
+                      "a": "הָיְתָה",
+                      "en": "was",
+                      "yi": "איז געווען"
+                    },
+                    {
+                      "a": "תֹהוּ",
+                      "en": "empty / formless",
+                      "yi": "וויסט / אָן פֿאָרעם"
+                    },
+                    {
+                      "a": "וָבֹהוּ",
+                      "en": "and void / chaotic",
+                      "yi": "און פּוסט / כאַאָטיש"
+                    },
+                    {
+                      "a": "וְחֹשֶׁךְ",
+                      "en": "and darkness",
+                      "yi": "און פֿינצטערניש"
+                    },
+                    {
+                      "a": "עַל פְּנֵי",
+                      "en": "over the face of",
+                      "yi": "איבער דעם פּנים פֿון"
+                    },
+                    {
+                      "a": "תְהוֹם",
+                      "en": "the deep / abyss",
+                      "yi": "דעם תּהום"
+                    },
+                    {
+                      "a": "וְרוּחַ אֱלֹהִים",
+                      "en": "and the spirit of God",
+                      "yi": "און דער גײַסט פֿון גאָט"
+                    },
+                    {
+                      "a": "מְרַחֶפֶת",
+                      "en": "hovered",
+                      "yi": "האָט געשוועבט"
+                    },
+                    {
+                      "a": "עַל פְּנֵי הַמָּיִם",
+                      "en": "over the waters",
+                      "yi": "איבער די וואַסערן"
+                    }
+                  ],
+                  "marker": "1:2"
                 },
-                {
-                  "a": "אֱלֹהִים",
-                  "en": "God",
-                  "yi": "גאָט"
-                },
-                {
-                  "a": "יְהִי",
-                  "en": "let there be",
-                  "yi": "זאָל זײַן"
-                },
-                {
-                  "a": "אוֹר",
-                  "en": "light",
-                  "yi": "ליכט"
-                },
-                {
-                  "a": "וַיְהִי אוֹר",
-                  "en": "and there was light",
-                  "yi": "און עס איז געווען ליכט"
-                }
-              ],
-              "sections": [
                 {
                   "id": "ber-1-3-s1",
                   "text": "God's first creative act: with a single word — 'Let there be light' — light came into being. This is the prototype of creation through speech.",
@@ -6435,52 +6393,39 @@
                   "tosfos": "",
                   "tosfos_yiddish": "",
                   "tosfos_explanation": "",
-                  "tosfos_explanation_yiddish": ""
-                }
-              ]
-            },
-            {
-              "id": "ber-1-4",
-              "daf": "1:4",
-              "title": "Bereishis 1:4",
-              "title_yiddish": "בראשית א׳:4",
-              "illustration": "scroll",
-              "aramaic": "וַיַּרְא אֱלֹהִים אֶת הָאוֹר כִּי טוֹב וַיַּבְדֵּל אֱלֹהִים בֵּין הָאוֹר וּבֵין הַחֹשֶׁךְ.",
-              "aramaic_translation": "And God saw the light, that it was good, and God separated between the light and the darkness.",
-              "aramaic_translation_yiddish": "און גאָט האָט געזען דאָס ליכט, אַז עס איז גוט, און גאָט האָט אונטערשיידן צווישן דעם ליכט און דער פֿינצטערניש.",
-              "aramaic_words": [
-                {
-                  "a": "וַיַּרְא",
-                  "en": "and (He) saw",
-                  "yi": "און ער האָט געזען"
+                  "tosfos_explanation_yiddish": "",
+                  "aramaic": "וַיֹּאמֶר אֱלֹהִים יְהִי אוֹר וַיְהִי אוֹר.",
+                  "aramaic_translation": "And God said: Let there be light — and there was light.",
+                  "aramaic_translation_yiddish": "און גאָט האָט געזאָגט: זאָל זײַן ליכט — און עס איז געווען ליכט.",
+                  "aramaic_words": [
+                    {
+                      "a": "וַיֹּאמֶר",
+                      "en": "and (He) said",
+                      "yi": "און ער האָט געזאָגט"
+                    },
+                    {
+                      "a": "אֱלֹהִים",
+                      "en": "God",
+                      "yi": "גאָט"
+                    },
+                    {
+                      "a": "יְהִי",
+                      "en": "let there be",
+                      "yi": "זאָל זײַן"
+                    },
+                    {
+                      "a": "אוֹר",
+                      "en": "light",
+                      "yi": "ליכט"
+                    },
+                    {
+                      "a": "וַיְהִי אוֹר",
+                      "en": "and there was light",
+                      "yi": "און עס איז געווען ליכט"
+                    }
+                  ],
+                  "marker": "1:3"
                 },
-                {
-                  "a": "אֶת הָאוֹר",
-                  "en": "the light",
-                  "yi": "דאָס ליכט"
-                },
-                {
-                  "a": "כִּי טוֹב",
-                  "en": "that (it was) good",
-                  "yi": "אַז עס איז גוט"
-                },
-                {
-                  "a": "וַיַּבְדֵּל",
-                  "en": "and (He) separated",
-                  "yi": "און ער האָט אונטערשיידן"
-                },
-                {
-                  "a": "בֵּין הָאוֹר",
-                  "en": "between the light",
-                  "yi": "צווישן דעם ליכט"
-                },
-                {
-                  "a": "וּבֵין הַחֹשֶׁךְ",
-                  "en": "and between the darkness",
-                  "yi": "און צווישן דער פֿינצטערניש"
-                }
-              ],
-              "sections": [
                 {
                   "id": "ber-1-4-s1",
                   "text": "God saw that the light was 'good' and separated it from darkness. This separation is the foundation of order — each thing now has its proper place.",
@@ -6503,57 +6448,44 @@
                   "tosfos": "",
                   "tosfos_yiddish": "",
                   "tosfos_explanation": "",
-                  "tosfos_explanation_yiddish": ""
-                }
-              ]
-            },
-            {
-              "id": "ber-1-5",
-              "daf": "1:5",
-              "title": "Bereishis 1:5",
-              "title_yiddish": "בראשית א׳:5",
-              "illustration": "scroll",
-              "aramaic": "וַיִּקְרָא אֱלֹהִים לָאוֹר יוֹם וְלַחֹשֶׁךְ קָרָא לָיְלָה וַיְהִי עֶרֶב וַיְהִי בֹקֶר יוֹם אֶחָד.",
-              "aramaic_translation": "And God called the light Day, and the darkness He called Night. And it was evening, and it was morning — one day.",
-              "aramaic_translation_yiddish": "און גאָט האָט אָנגערופֿן דאָס ליכט טאָג, און די פֿינצטערניש האָט ער אָנגערופֿן נאַכט. און עס איז געווען אָוונט, און עס איז געווען פֿרי — איין טאָג.",
-              "aramaic_words": [
-                {
-                  "a": "וַיִּקְרָא",
-                  "en": "and (He) called",
-                  "yi": "און ער האָט אָנגערופֿן"
+                  "tosfos_explanation_yiddish": "",
+                  "aramaic": "וַיַּרְא אֱלֹהִים אֶת הָאוֹר כִּי טוֹב וַיַּבְדֵּל אֱלֹהִים בֵּין הָאוֹר וּבֵין הַחֹשֶׁךְ.",
+                  "aramaic_translation": "And God saw the light, that it was good, and God separated between the light and the darkness.",
+                  "aramaic_translation_yiddish": "און גאָט האָט געזען דאָס ליכט, אַז עס איז גוט, און גאָט האָט אונטערשיידן צווישן דעם ליכט און דער פֿינצטערניש.",
+                  "aramaic_words": [
+                    {
+                      "a": "וַיַּרְא",
+                      "en": "and (He) saw",
+                      "yi": "און ער האָט געזען"
+                    },
+                    {
+                      "a": "אֶת הָאוֹר",
+                      "en": "the light",
+                      "yi": "דאָס ליכט"
+                    },
+                    {
+                      "a": "כִּי טוֹב",
+                      "en": "that (it was) good",
+                      "yi": "אַז עס איז גוט"
+                    },
+                    {
+                      "a": "וַיַּבְדֵּל",
+                      "en": "and (He) separated",
+                      "yi": "און ער האָט אונטערשיידן"
+                    },
+                    {
+                      "a": "בֵּין הָאוֹר",
+                      "en": "between the light",
+                      "yi": "צווישן דעם ליכט"
+                    },
+                    {
+                      "a": "וּבֵין הַחֹשֶׁךְ",
+                      "en": "and between the darkness",
+                      "yi": "און צווישן דער פֿינצטערניש"
+                    }
+                  ],
+                  "marker": "1:4"
                 },
-                {
-                  "a": "לָאוֹר יוֹם",
-                  "en": "the light: 'Day'",
-                  "yi": "דאָס ליכט 'טאָג'"
-                },
-                {
-                  "a": "וְלַחֹשֶׁךְ",
-                  "en": "and the darkness",
-                  "yi": "און די פֿינצטערניש"
-                },
-                {
-                  "a": "קָרָא לָיְלָה",
-                  "en": "He called Night",
-                  "yi": "האָט ער אָנגערופֿן נאַכט"
-                },
-                {
-                  "a": "וַיְהִי עֶרֶב",
-                  "en": "and it was evening",
-                  "yi": "און עס איז געווען אָוונט"
-                },
-                {
-                  "a": "וַיְהִי בֹקֶר",
-                  "en": "and it was morning",
-                  "yi": "און עס איז געווען פֿרי"
-                },
-                {
-                  "a": "יוֹם אֶחָד",
-                  "en": "one day (lit. day-one)",
-                  "yi": "איין טאָג"
-                }
-              ],
-              "sections": [
                 {
                   "id": "ber-1-5-s1",
                   "text": "God names the cycles: light = Day, darkness = Night. The pasuk ends 'evening and morning, one day.' From here we learn that a halachic day starts at night.",
@@ -6576,7 +6508,48 @@
                   "tosfos": "",
                   "tosfos_yiddish": "",
                   "tosfos_explanation": "",
-                  "tosfos_explanation_yiddish": ""
+                  "tosfos_explanation_yiddish": "",
+                  "aramaic": "וַיִּקְרָא אֱלֹהִים לָאוֹר יוֹם וְלַחֹשֶׁךְ קָרָא לָיְלָה וַיְהִי עֶרֶב וַיְהִי בֹקֶר יוֹם אֶחָד.",
+                  "aramaic_translation": "And God called the light Day, and the darkness He called Night. And it was evening, and it was morning — one day.",
+                  "aramaic_translation_yiddish": "און גאָט האָט אָנגערופֿן דאָס ליכט טאָג, און די פֿינצטערניש האָט ער אָנגערופֿן נאַכט. און עס איז געווען אָוונט, און עס איז געווען פֿרי — איין טאָג.",
+                  "aramaic_words": [
+                    {
+                      "a": "וַיִּקְרָא",
+                      "en": "and (He) called",
+                      "yi": "און ער האָט אָנגערופֿן"
+                    },
+                    {
+                      "a": "לָאוֹר יוֹם",
+                      "en": "the light: 'Day'",
+                      "yi": "דאָס ליכט 'טאָג'"
+                    },
+                    {
+                      "a": "וְלַחֹשֶׁךְ",
+                      "en": "and the darkness",
+                      "yi": "און די פֿינצטערניש"
+                    },
+                    {
+                      "a": "קָרָא לָיְלָה",
+                      "en": "He called Night",
+                      "yi": "האָט ער אָנגערופֿן נאַכט"
+                    },
+                    {
+                      "a": "וַיְהִי עֶרֶב",
+                      "en": "and it was evening",
+                      "yi": "און עס איז געווען אָוונט"
+                    },
+                    {
+                      "a": "וַיְהִי בֹקֶר",
+                      "en": "and it was morning",
+                      "yi": "און עס איז געווען פֿרי"
+                    },
+                    {
+                      "a": "יוֹם אֶחָד",
+                      "en": "one day (lit. day-one)",
+                      "yi": "איין טאָג"
+                    }
+                  ],
+                  "marker": "1:5"
                 }
               ]
             }
@@ -6599,86 +6572,15 @@
           "name_en_yiddish": "די קייט פֿון מסורה",
           "sugyos": [
             {
-              "id": "avos-1-1",
-              "daf": "1:1",
-              "title": "Avos 1:1",
-              "title_yiddish": "אבות א׳:1",
+              "id": "pirkei-avos-p1",
+              "daf": "Perek 1",
+              "title": "Pirkei Avos Perek 1",
+              "title_yiddish": "פּרקי אבות פּרק 1",
               "illustration": "scroll",
-              "aramaic": "מֹשֶׁה קִבֵּל תּוֹרָה מִסִּינַי, וּמְסָרָהּ לִיהוֹשֻׁעַ, וִיהוֹשֻׁעַ לִזְקֵנִים, וּזְקֵנִים לִנְבִיאִים, וּנְבִיאִים מְסָרוּהָ לְאַנְשֵׁי כְּנֶסֶת הַגְּדוֹלָה. הֵם אָמְרוּ שְׁלֹשָׁה דְבָרִים: הֱווּ מְתוּנִים בַּדִּין, וְהַעֲמִידוּ תַלְמִידִים הַרְבֵּה, וַעֲשׂוּ סְיָג לַתּוֹרָה.",
-              "aramaic_translation": "Moshe received the Torah from Sinai, and transmitted it to Yehoshua, and Yehoshua to the Elders, and the Elders to the Prophets, and the Prophets transmitted it to the Men of the Great Assembly. They said three things: Be deliberate in judgment, raise up many students, and make a fence around the Torah.",
-              "aramaic_translation_yiddish": "משה האָט באַקומען די תורה פֿון סיני, און איבערגעגעבן צו יהושע, יהושע צו די זקנים, די זקנים צו די נביאים, די נביאים צו די אַנשי כנסת הגדולה. זיי האָבן געזאָגט דרײַ זאַכן: זײַט באַרעכענט אין משפּט, שטעלט אויף סך תּלמידים, און מאַכט אַ סייג צו דער תורה.",
-              "aramaic_words": [
-                {
-                  "a": "מֹשֶׁה",
-                  "en": "Moshe (Moses)",
-                  "yi": "משה"
-                },
-                {
-                  "a": "קִבֵּל תּוֹרָה",
-                  "en": "received (the) Torah",
-                  "yi": "האָט באַקומען די תורה"
-                },
-                {
-                  "a": "מִסִּינַי",
-                  "en": "from Sinai",
-                  "yi": "פֿון סיני"
-                },
-                {
-                  "a": "וּמְסָרָהּ",
-                  "en": "and transmitted it",
-                  "yi": "און איבערגעגעבן עס"
-                },
-                {
-                  "a": "לִיהוֹשֻׁעַ",
-                  "en": "to Yehoshua",
-                  "yi": "צו יהושע"
-                },
-                {
-                  "a": "לִזְקֵנִים",
-                  "en": "to the Elders",
-                  "yi": "צו די זקנים"
-                },
-                {
-                  "a": "לִנְבִיאִים",
-                  "en": "to the Prophets",
-                  "yi": "צו די נביאים"
-                },
-                {
-                  "a": "אַנְשֵׁי כְּנֶסֶת הַגְּדוֹלָה",
-                  "en": "Men of the Great Assembly",
-                  "yi": "אַנשי כנסת הגדולה"
-                },
-                {
-                  "a": "הֱווּ מְתוּנִים",
-                  "en": "be deliberate",
-                  "yi": "זײַט באַרעכענט"
-                },
-                {
-                  "a": "בַּדִּין",
-                  "en": "in judgment",
-                  "yi": "אין משפּט"
-                },
-                {
-                  "a": "הַעֲמִידוּ תַלְמִידִים",
-                  "en": "raise up students",
-                  "yi": "שטעלט אויף תּלמידים"
-                },
-                {
-                  "a": "הַרְבֵּה",
-                  "en": "many",
-                  "yi": "סך"
-                },
-                {
-                  "a": "עֲשׂוּ סְיָג",
-                  "en": "make a fence",
-                  "yi": "מאַכט אַ סייג"
-                },
-                {
-                  "a": "לַתּוֹרָה",
-                  "en": "for the Torah",
-                  "yi": "פֿאַר דער תורה"
-                }
-              ],
+              "aramaic": "",
+              "aramaic_translation": "",
+              "aramaic_translation_yiddish": "",
+              "aramaic_words": [],
               "sections": [
                 {
                   "id": "avos-1-1-s1",
@@ -6702,62 +6604,84 @@
                   "tosfos": "",
                   "tosfos_yiddish": "",
                   "tosfos_explanation": "",
-                  "tosfos_explanation_yiddish": ""
-                }
-              ]
-            },
-            {
-              "id": "avos-1-2",
-              "daf": "1:2",
-              "title": "Avos 1:2",
-              "title_yiddish": "אבות א׳:2",
-              "illustration": "scroll",
-              "aramaic": "שִׁמְעוֹן הַצַּדִּיק הָיָה מִשְּׁיָרֵי כְּנֶסֶת הַגְּדוֹלָה. הוּא הָיָה אוֹמֵר, עַל שְׁלֹשָׁה דְבָרִים הָעוֹלָם עוֹמֵד: עַל הַתּוֹרָה, וְעַל הָעֲבוֹדָה, וְעַל גְּמִילוּת חֲסָדִים.",
-              "aramaic_translation": "Shimon HaTzadik was among the remnants of the Great Assembly. He used to say: The world stands on three things — on Torah, on Avodah (Divine service), and on Gemilus Chasadim (acts of kindness).",
-              "aramaic_translation_yiddish": "שמעון הצדיק איז געווען פֿון די לעצטע פֿון כנסת הגדולה. ער פֿלעגט זאָגן: די וועלט שטייט אויף דרײַ זאַכן — אויף תורה, אויף עבודה, און אויף גמילות חסדים.",
-              "aramaic_words": [
-                {
-                  "a": "שִׁמְעוֹן הַצַּדִּיק",
-                  "en": "Shimon HaTzadik",
-                  "yi": "שמעון הצדיק"
+                  "tosfos_explanation_yiddish": "",
+                  "aramaic": "מֹשֶׁה קִבֵּל תּוֹרָה מִסִּינַי, וּמְסָרָהּ לִיהוֹשֻׁעַ, וִיהוֹשֻׁעַ לִזְקֵנִים, וּזְקֵנִים לִנְבִיאִים, וּנְבִיאִים מְסָרוּהָ לְאַנְשֵׁי כְּנֶסֶת הַגְּדוֹלָה. הֵם אָמְרוּ שְׁלֹשָׁה דְבָרִים: הֱווּ מְתוּנִים בַּדִּין, וְהַעֲמִידוּ תַלְמִידִים הַרְבֵּה, וַעֲשׂוּ סְיָג לַתּוֹרָה.",
+                  "aramaic_translation": "Moshe received the Torah from Sinai, and transmitted it to Yehoshua, and Yehoshua to the Elders, and the Elders to the Prophets, and the Prophets transmitted it to the Men of the Great Assembly. They said three things: Be deliberate in judgment, raise up many students, and make a fence around the Torah.",
+                  "aramaic_translation_yiddish": "משה האָט באַקומען די תורה פֿון סיני, און איבערגעגעבן צו יהושע, יהושע צו די זקנים, די זקנים צו די נביאים, די נביאים צו די אַנשי כנסת הגדולה. זיי האָבן געזאָגט דרײַ זאַכן: זײַט באַרעכענט אין משפּט, שטעלט אויף סך תּלמידים, און מאַכט אַ סייג צו דער תורה.",
+                  "aramaic_words": [
+                    {
+                      "a": "מֹשֶׁה",
+                      "en": "Moshe (Moses)",
+                      "yi": "משה"
+                    },
+                    {
+                      "a": "קִבֵּל תּוֹרָה",
+                      "en": "received (the) Torah",
+                      "yi": "האָט באַקומען די תורה"
+                    },
+                    {
+                      "a": "מִסִּינַי",
+                      "en": "from Sinai",
+                      "yi": "פֿון סיני"
+                    },
+                    {
+                      "a": "וּמְסָרָהּ",
+                      "en": "and transmitted it",
+                      "yi": "און איבערגעגעבן עס"
+                    },
+                    {
+                      "a": "לִיהוֹשֻׁעַ",
+                      "en": "to Yehoshua",
+                      "yi": "צו יהושע"
+                    },
+                    {
+                      "a": "לִזְקֵנִים",
+                      "en": "to the Elders",
+                      "yi": "צו די זקנים"
+                    },
+                    {
+                      "a": "לִנְבִיאִים",
+                      "en": "to the Prophets",
+                      "yi": "צו די נביאים"
+                    },
+                    {
+                      "a": "אַנְשֵׁי כְּנֶסֶת הַגְּדוֹלָה",
+                      "en": "Men of the Great Assembly",
+                      "yi": "אַנשי כנסת הגדולה"
+                    },
+                    {
+                      "a": "הֱווּ מְתוּנִים",
+                      "en": "be deliberate",
+                      "yi": "זײַט באַרעכענט"
+                    },
+                    {
+                      "a": "בַּדִּין",
+                      "en": "in judgment",
+                      "yi": "אין משפּט"
+                    },
+                    {
+                      "a": "הַעֲמִידוּ תַלְמִידִים",
+                      "en": "raise up students",
+                      "yi": "שטעלט אויף תּלמידים"
+                    },
+                    {
+                      "a": "הַרְבֵּה",
+                      "en": "many",
+                      "yi": "סך"
+                    },
+                    {
+                      "a": "עֲשׂוּ סְיָג",
+                      "en": "make a fence",
+                      "yi": "מאַכט אַ סייג"
+                    },
+                    {
+                      "a": "לַתּוֹרָה",
+                      "en": "for the Torah",
+                      "yi": "פֿאַר דער תורה"
+                    }
+                  ],
+                  "marker": "1:1"
                 },
-                {
-                  "a": "הָיָה מִשְּׁיָרֵי",
-                  "en": "was among the remnants",
-                  "yi": "איז געווען פֿון די לעצטע"
-                },
-                {
-                  "a": "כְּנֶסֶת הַגְּדוֹלָה",
-                  "en": "the Great Assembly",
-                  "yi": "כנסת הגדולה"
-                },
-                {
-                  "a": "עַל שְׁלֹשָׁה דְבָרִים",
-                  "en": "on three things",
-                  "yi": "אויף דרײַ זאַכן"
-                },
-                {
-                  "a": "הָעוֹלָם עוֹמֵד",
-                  "en": "the world stands",
-                  "yi": "די וועלט שטייט"
-                },
-                {
-                  "a": "עַל הַתּוֹרָה",
-                  "en": "on the Torah",
-                  "yi": "אויף דער תורה"
-                },
-                {
-                  "a": "וְעַל הָעֲבוֹדָה",
-                  "en": "and on the Service",
-                  "yi": "און אויף דער עבודה"
-                },
-                {
-                  "a": "גְּמִילוּת חֲסָדִים",
-                  "en": "acts of kindness",
-                  "yi": "גמילות חסדים"
-                }
-              ],
-              "sections": [
                 {
                   "id": "avos-1-2-s1",
                   "text": "Shimon HaTzadik's famous three-pillar teaching: the entire world is sustained by Torah study, Avodah (originally the Beis HaMikdash service, today tefillah), and acts of kindness toward others.",
@@ -6780,77 +6704,54 @@
                   "tosfos": "",
                   "tosfos_yiddish": "",
                   "tosfos_explanation": "",
-                  "tosfos_explanation_yiddish": ""
-                }
-              ]
-            },
-            {
-              "id": "avos-1-3",
-              "daf": "1:3",
-              "title": "Avos 1:3",
-              "title_yiddish": "אבות א׳:3",
-              "illustration": "scroll",
-              "aramaic": "אַנְטִיגְנוֹס אִישׁ סוֹכוֹ קִבֵּל מִשִּׁמְעוֹן הַצַּדִּיק. הוּא הָיָה אוֹמֵר, אַל תִּהְיוּ כַּעֲבָדִים הַמְּשַׁמְּשִׁין אֶת הָרַב עַל מְנָת לְקַבֵּל פְּרָס, אֶלָּא הֱווּ כַּעֲבָדִים הַמְּשַׁמְּשִׁין אֶת הָרַב שֶׁלֹּא עַל מְנָת לְקַבֵּל פְּרָס, וִיהִי מוֹרָא שָׁמַיִם עֲלֵיכֶם.",
-              "aramaic_translation": "Antignus of Socho received from Shimon HaTzadik. He used to say: Do not be like servants who serve the master in order to receive a reward, but be like servants who serve the master not in order to receive a reward — and may the fear of Heaven be upon you.",
-              "aramaic_translation_yiddish": "אַנטיגנוס איש סוכו האָט באַקומען פֿון שמעון הצדיק. ער פֿלעגט זאָגן: זײַט נישט ווי קנעכט וואָס דינען זייער האַר אויף צו באַקומען אַ באַלוינונג, נאָר זײַט ווי קנעכט וואָס דינען זייער האַר נישט אויף צו באַקומען אַ באַלוינונג, און די מורא פֿון הימל זאָל זײַן אויף אײַך.",
-              "aramaic_words": [
-                {
-                  "a": "אַנְטִיגְנוֹס",
-                  "en": "Antignus",
-                  "yi": "אַנטיגנוס"
+                  "tosfos_explanation_yiddish": "",
+                  "aramaic": "שִׁמְעוֹן הַצַּדִּיק הָיָה מִשְּׁיָרֵי כְּנֶסֶת הַגְּדוֹלָה. הוּא הָיָה אוֹמֵר, עַל שְׁלֹשָׁה דְבָרִים הָעוֹלָם עוֹמֵד: עַל הַתּוֹרָה, וְעַל הָעֲבוֹדָה, וְעַל גְּמִילוּת חֲסָדִים.",
+                  "aramaic_translation": "Shimon HaTzadik was among the remnants of the Great Assembly. He used to say: The world stands on three things — on Torah, on Avodah (Divine service), and on Gemilus Chasadim (acts of kindness).",
+                  "aramaic_translation_yiddish": "שמעון הצדיק איז געווען פֿון די לעצטע פֿון כנסת הגדולה. ער פֿלעגט זאָגן: די וועלט שטייט אויף דרײַ זאַכן — אויף תורה, אויף עבודה, און אויף גמילות חסדים.",
+                  "aramaic_words": [
+                    {
+                      "a": "שִׁמְעוֹן הַצַּדִּיק",
+                      "en": "Shimon HaTzadik",
+                      "yi": "שמעון הצדיק"
+                    },
+                    {
+                      "a": "הָיָה מִשְּׁיָרֵי",
+                      "en": "was among the remnants",
+                      "yi": "איז געווען פֿון די לעצטע"
+                    },
+                    {
+                      "a": "כְּנֶסֶת הַגְּדוֹלָה",
+                      "en": "the Great Assembly",
+                      "yi": "כנסת הגדולה"
+                    },
+                    {
+                      "a": "עַל שְׁלֹשָׁה דְבָרִים",
+                      "en": "on three things",
+                      "yi": "אויף דרײַ זאַכן"
+                    },
+                    {
+                      "a": "הָעוֹלָם עוֹמֵד",
+                      "en": "the world stands",
+                      "yi": "די וועלט שטייט"
+                    },
+                    {
+                      "a": "עַל הַתּוֹרָה",
+                      "en": "on the Torah",
+                      "yi": "אויף דער תורה"
+                    },
+                    {
+                      "a": "וְעַל הָעֲבוֹדָה",
+                      "en": "and on the Service",
+                      "yi": "און אויף דער עבודה"
+                    },
+                    {
+                      "a": "גְּמִילוּת חֲסָדִים",
+                      "en": "acts of kindness",
+                      "yi": "גמילות חסדים"
+                    }
+                  ],
+                  "marker": "1:2"
                 },
-                {
-                  "a": "אִישׁ סוֹכוֹ",
-                  "en": "of Socho",
-                  "yi": "איש סוכו"
-                },
-                {
-                  "a": "אַל תִּהְיוּ",
-                  "en": "do not be",
-                  "yi": "זײַט נישט"
-                },
-                {
-                  "a": "כַּעֲבָדִים",
-                  "en": "like servants",
-                  "yi": "ווי קנעכט"
-                },
-                {
-                  "a": "הַמְּשַׁמְּשִׁין",
-                  "en": "who serve",
-                  "yi": "וואָס דינען"
-                },
-                {
-                  "a": "אֶת הָרַב",
-                  "en": "the master",
-                  "yi": "דעם האַר"
-                },
-                {
-                  "a": "עַל מְנָת",
-                  "en": "in order",
-                  "yi": "אויף צו"
-                },
-                {
-                  "a": "לְקַבֵּל פְּרָס",
-                  "en": "receive a reward",
-                  "yi": "באַקומען אַ באַלוינונג"
-                },
-                {
-                  "a": "שֶׁלֹּא עַל מְנָת",
-                  "en": "not in order",
-                  "yi": "נישט אויף צו"
-                },
-                {
-                  "a": "מוֹרָא שָׁמַיִם",
-                  "en": "fear of Heaven",
-                  "yi": "מורא פֿון הימל"
-                },
-                {
-                  "a": "עֲלֵיכֶם",
-                  "en": "upon you",
-                  "yi": "אויף אײַך"
-                }
-              ],
-              "sections": [
                 {
                   "id": "avos-1-3-s1",
                   "text": "Antignus teaches: serve God for love, not for reward. The relationship should be loyalty itself, not a transaction. And: keep yir'as shamayim (awe of Heaven) as your foundation.",
@@ -6873,7 +6774,68 @@
                   "tosfos": "",
                   "tosfos_yiddish": "",
                   "tosfos_explanation": "",
-                  "tosfos_explanation_yiddish": ""
+                  "tosfos_explanation_yiddish": "",
+                  "aramaic": "אַנְטִיגְנוֹס אִישׁ סוֹכוֹ קִבֵּל מִשִּׁמְעוֹן הַצַּדִּיק. הוּא הָיָה אוֹמֵר, אַל תִּהְיוּ כַּעֲבָדִים הַמְּשַׁמְּשִׁין אֶת הָרַב עַל מְנָת לְקַבֵּל פְּרָס, אֶלָּא הֱווּ כַּעֲבָדִים הַמְּשַׁמְּשִׁין אֶת הָרַב שֶׁלֹּא עַל מְנָת לְקַבֵּל פְּרָס, וִיהִי מוֹרָא שָׁמַיִם עֲלֵיכֶם.",
+                  "aramaic_translation": "Antignus of Socho received from Shimon HaTzadik. He used to say: Do not be like servants who serve the master in order to receive a reward, but be like servants who serve the master not in order to receive a reward — and may the fear of Heaven be upon you.",
+                  "aramaic_translation_yiddish": "אַנטיגנוס איש סוכו האָט באַקומען פֿון שמעון הצדיק. ער פֿלעגט זאָגן: זײַט נישט ווי קנעכט וואָס דינען זייער האַר אויף צו באַקומען אַ באַלוינונג, נאָר זײַט ווי קנעכט וואָס דינען זייער האַר נישט אויף צו באַקומען אַ באַלוינונג, און די מורא פֿון הימל זאָל זײַן אויף אײַך.",
+                  "aramaic_words": [
+                    {
+                      "a": "אַנְטִיגְנוֹס",
+                      "en": "Antignus",
+                      "yi": "אַנטיגנוס"
+                    },
+                    {
+                      "a": "אִישׁ סוֹכוֹ",
+                      "en": "of Socho",
+                      "yi": "איש סוכו"
+                    },
+                    {
+                      "a": "אַל תִּהְיוּ",
+                      "en": "do not be",
+                      "yi": "זײַט נישט"
+                    },
+                    {
+                      "a": "כַּעֲבָדִים",
+                      "en": "like servants",
+                      "yi": "ווי קנעכט"
+                    },
+                    {
+                      "a": "הַמְּשַׁמְּשִׁין",
+                      "en": "who serve",
+                      "yi": "וואָס דינען"
+                    },
+                    {
+                      "a": "אֶת הָרַב",
+                      "en": "the master",
+                      "yi": "דעם האַר"
+                    },
+                    {
+                      "a": "עַל מְנָת",
+                      "en": "in order",
+                      "yi": "אויף צו"
+                    },
+                    {
+                      "a": "לְקַבֵּל פְּרָס",
+                      "en": "receive a reward",
+                      "yi": "באַקומען אַ באַלוינונג"
+                    },
+                    {
+                      "a": "שֶׁלֹּא עַל מְנָת",
+                      "en": "not in order",
+                      "yi": "נישט אויף צו"
+                    },
+                    {
+                      "a": "מוֹרָא שָׁמַיִם",
+                      "en": "fear of Heaven",
+                      "yi": "מורא פֿון הימל"
+                    },
+                    {
+                      "a": "עֲלֵיכֶם",
+                      "en": "upon you",
+                      "yi": "אויף אײַך"
+                    }
+                  ],
+                  "marker": "1:3"
                 }
               ]
             }

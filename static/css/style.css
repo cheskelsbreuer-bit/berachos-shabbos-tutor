@@ -1156,3 +1156,50 @@ body[data-contrast="high"] .daily-plan-item { background: #2a2a2a; color: #fff; 
   0%, 100% { opacity: 1; }
   50% { opacity: 0.6; }
 }
+
+/* V7: Plain Read full-chapter layout */
+.pr-section {
+  background: linear-gradient(135deg, #fef3c7 0%, #fef9e0 100%);
+  border: 2px solid #fbbf24;
+  border-radius: var(--radius-lg);
+  padding: 22px 22px 16px;
+  margin-bottom: 18px;
+  box-shadow: var(--shadow);
+}
+body[data-contrast="high"] .pr-section {
+  background: #1a1a1a; border-color: #ffd700;
+}
+.pr-section .plainread-hebrew {
+  margin-bottom: 12px;
+}
+.pr-section-marker {
+  display: inline-block;
+  background: var(--primary);
+  color: white;
+  font-weight: 700;
+  padding: 3px 12px;
+  border-radius: 999px;
+  font-size: 0.85em;
+  margin-bottom: 12px;
+  font-family: inherit;
+}
+.plainread-hint-bottom {
+  text-align: center;
+  margin: 18px 0;
+  font-size: 0.85em;
+  color: var(--text-soft);
+  font-style: italic;
+}
+.plainread-bottom-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 24px;
+  padding-top: 18px;
+  border-top: 1px solid var(--border);
+}
+.plainread-bottom-actions .primary-btn,
+.plainread-bottom-actions .choice-btn {
+  width: 100%;
+  text-align: center;
+}
