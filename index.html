@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Berachos / Shabbos Tutor</title>
+  <link rel="stylesheet" href="static/css/style.css" />
+</head>
+<body data-lang="en" data-age="" data-mode="">
+  <header id="app-header" class="app-header hidden">
+    <div class="header-left">
+      <button id="home-btn" class="icon-btn" aria-label="Home">🏠</button>
+      <span id="app-title" class="app-title" data-i18n="app_title">Learning Tutor</span>
+    </div>
+    <div class="header-center">
+      <div id="xp-bar-wrap" class="xp-bar-wrap"></div>
+      <div id="daily-goal-bar" class="daily-goal-bar"></div>
+    </div>
+    <div class="header-right">
+      <span id="streak-badge" class="streak-badge hidden">
+        <span class="flame">🔥</span><span id="streak-count">0</span>
+      </span>
+      <button id="focus-btn" class="icon-btn" aria-label="Focus">🎯</button>
+      <button id="sbs-btn" class="icon-btn" aria-label="Side by side">⇔</button>
+      <button id="chazara-btn" class="icon-btn" aria-label="Chazara">🔁</button>
+      <button id="mistakes-btn" class="icon-btn" aria-label="Mistakes">📋</button>
+      <button id="notes-btn" class="icon-btn" aria-label="Notes">📝</button>
+      <button id="bookmarks-btn" class="icon-btn" aria-label="Bookmarks">🔖</button>
+      <button id="feedback-btn" class="icon-btn" aria-label="Feedback">💬</button>
+      <button id="settings-btn" class="icon-btn" aria-label="Settings">⚙️</button>
+      <button id="lang-toggle" class="lang-btn" aria-label="Language">🌐</button>
+    </div>
+  </header>
+
+  <main id="app-main">
+    <!-- Language -->
+    <section id="screen-language" class="screen active">
+      <h1 class="big-title" data-i18n="select_language">Choose your language</h1>
+      <div class="big-buttons two-col">
+        <button class="choice-btn primary" data-lang-choice="en">English</button>
+        <button class="choice-btn primary" data-lang-choice="yi" dir="rtl">ייִדיש</button>
+      </div>
+    </section>
+
+    <!-- Age -->
+    <section id="screen-age" class="screen">
+      <h1 class="big-title" data-i18n="select_age">Choose your age group</h1>
+      <div class="big-buttons three-col">
+        <button class="choice-btn" data-age-choice="kids"><span class="emoji">🧒</span><span data-i18n="kids">Kids</span></button>
+        <button class="choice-btn" data-age-choice="teens"><span class="emoji">🧑</span><span data-i18n="teens">Teens</span></button>
+        <button class="choice-btn" data-age-choice="adults"><span class="emoji">🧓</span><span data-i18n="adults">Adults</span></button>
+      </div>
+      <button class="back-btn" data-back="screen-language" data-i18n="back">Back</button>
+    </section>
+
+    <!-- Challenges -->
+    <section id="screen-challenges" class="screen">
+      <h1 class="big-title" data-i18n="challenges_title">What's hard for you?</h1>
+      <p class="subtitle" data-i18n="challenges_subtitle">Pick everything that applies.</p>
+      <div class="checkbox-list" id="challenge-list">
+        <label class="check-item"><input type="checkbox" value="focus" /><span data-i18n="challenge_focus">Hard to focus</span></label>
+        <label class="check-item"><input type="checkbox" value="memory" /><span data-i18n="challenge_memory">Memory</span></label>
+        <label class="check-item"><input type="checkbox" value="reading" /><span data-i18n="challenge_reading">Reading</span></label>
+        <label class="check-item"><input type="checkbox" value="slow" /><span data-i18n="challenge_slow">Slow</span></label>
+        <label class="check-item"><input type="checkbox" value="aramaic" /><span data-i18n="challenge_aramaic">Aramaic</span></label>
+        <label class="check-item"><input type="checkbox" value="unknown" /><span data-i18n="challenge_unknown">Unknown</span></label>
+      </div>
+      <div class="nav-row">
+        <button class="back-btn" data-back="screen-age" data-i18n="back">Back</button>
+        <button id="challenges-next" class="primary-btn" data-i18n="next">Next</button>
+      </div>
+    </section>
+
+    <!-- Diagnostic Quiz -->
+    <section id="screen-quiz" class="screen">
+      <h1 class="big-title" data-i18n="quiz_title">Quick Quiz</h1>
+      <div id="quiz-progress" class="quiz-progress"></div>
+      <div id="quiz-question-area" class="quiz-area"></div>
+      <div class="nav-row">
+        <button id="quiz-back" class="back-btn" data-i18n="back">Back</button>
+        <button id="quiz-next" class="primary-btn" data-i18n="next">Next</button>
+      </div>
+    </section>
+
+    <!-- Pick -->
+    <section id="screen-pick" class="screen">
+      <h1 class="big-title" data-i18n="pick_title">What do you want to learn?</h1>
+      <div id="picker-tools" class="picker-tools"></div>
+      <div id="completion-map" class="completion-map"></div>
+      <div id="weak-spots" class="weak-spots"></div>
+      <div id="perakim-list" class="perakim-list"></div>
+      <button class="back-btn" id="pick-back" data-i18n="back">Back</button>
+    </section>
+
+    <!-- Mode -->
+    <section id="screen-mode" class="screen">
+      <h1 class="big-title" data-i18n="select_mode">How do you want to learn?</h1>
+      <p id="sugya-summary" class="subtitle"></p>
+      <p id="mode-recommendation" class="subtitle"></p>
+      <div class="big-buttons three-col">
+        <button class="choice-btn mode-btn" data-mode-choice="game"><span class="emoji">🎮</span><span data-i18n="mode_game">Game</span></button>
+        <button class="choice-btn mode-btn" data-mode-choice="flashcard"><span class="emoji">🃏</span><span data-i18n="mode_flashcard">Flashcards</span></button>
+        <button class="choice-btn mode-btn" data-mode-choice="story"><span class="emoji">📖</span><span data-i18n="mode_story">Story</span></button>
+      </div>
+      <button class="back-btn" data-back="screen-pick" data-i18n="back">Back</button>
+    </section>
+
+    <!-- Learn -->
+    <section id="screen-learn" class="screen">
+      <div id="sugya-header" class="sugya-header"></div>
+      <div id="aramaic-toggle-wrap" class="aramaic-toggle-wrap"></div>
+      <div id="aramaic-panel" class="aramaic-panel hidden"></div>
+      <div id="combo-indicator" class="combo-indicator hidden"></div>
+      <div id="learn-container"></div>
+      <div class="nav-row">
+        <button id="learn-back" class="back-btn" data-i18n="switch_mode">Switch Mode</button>
+      </div>
+    </section>
+
+    <!-- Welcome Back -->
+    <section id="screen-welcome-back" class="screen">
+      <h1 class="big-title" data-i18n="welcome_back">Welcome back!</h1>
+      <p id="welcome-streak-msg" class="subtitle"></p>
+      <div id="weekly-recap" class="weekly-recap-wrap"></div>
+      <div id="continue-where" class="continue-where"></div>
+      <div id="due-cards-btn-wrap"></div>
+      <div class="big-buttons two-col">
+        <button id="resume-btn" class="primary-btn" data-i18n="resume">Resume</button>
+        <button id="fresh-btn" class="choice-btn" data-i18n="start_fresh">Start fresh</button>
+      </div>
+    </section>
+
+    <!-- Mistakes -->
+    <section id="screen-mistakes" class="screen">
+      <h1 class="big-title" data-i18n="my_mistakes">My Mistakes</h1>
+      <div id="mistakes-list-body" class="mistakes-list"></div>
+      <div class="nav-row">
+        <button class="back-btn" id="mistakes-back" data-i18n="back">Back</button>
+        <button id="practice-mistakes-btn" class="primary-btn" data-i18n="practice_mistakes">Practice Mistakes</button>
+      </div>
+    </section>
+
+    <!-- Notes -->
+    <section id="screen-notes" class="screen">
+      <h1 class="big-title" data-i18n="my_notes">My Notes</h1>
+      <div id="notes-list-body" class="notes-list"></div>
+      <button class="back-btn" id="notes-back" data-i18n="back">Back</button>
+    </section>
+
+    <!-- Stickers (kids) -->
+    <section id="screen-stickers" class="screen">
+      <h1 class="big-title" data-i18n="my_stickers">My Stickers</h1>
+      <div id="sticker-grid" class="sticker-grid"></div>
+      <button class="back-btn" id="stickers-back" data-i18n="back">Back</button>
+    </section>
+
+    <!-- Chazara -->
+    <section id="screen-chazara" class="screen">
+      <h1 class="big-title" data-i18n="chazara_title">Chazara</h1>
+      <div id="chazara-area"></div>
+      <div class="nav-row">
+        <button class="back-btn" id="chazara-back" data-i18n="done_for_now">Done</button>
+      </div>
+    </section>
+  </main>
+
+  <!-- Accessibility panel -->
+  <button id="a11y-btn" class="a11y-btn" aria-label="Accessibility">♿</button>
+  <div id="a11y-panel" class="a11y-panel hidden">
+    <h3 data-i18n="accessibility_label">Accessibility</h3>
+    <div class="a11y-row"><label data-i18n="font_size">Font size</label>
+      <div class="btn-row"><button data-font="small">S</button><button data-font="medium">M</button><button data-font="large">L</button><button data-font="xlarge">XL</button></div>
+    </div>
+    <div class="a11y-row"><label data-i18n="contrast">Contrast</label>
+      <div class="btn-row"><button data-contrast="normal" data-i18n="contrast_normal">Normal</button><button data-contrast="high" data-i18n="contrast_high">High</button></div>
+    </div>
+    <div class="a11y-row"><label data-i18n="audio">Audio</label>
+      <div class="btn-row"><button data-audio="on">ON</button><button data-audio="off">OFF</button></div>
+    </div>
+    <button id="a11y-close" class="close-btn">×</button>
+  </div>
+
+  <!-- Settings overlay -->
+  <div id="settings-overlay" class="settings-overlay hidden">
+    <div class="settings-modal">
+      <div class="settings-header">
+        <h2 data-i18n="settings_title">Settings</h2>
+        <button id="settings-close" class="close-btn">×</button>
+      </div>
+      <div id="settings-body" class="settings-body"></div>
+    </div>
+  </div>
+
+  <!-- Word popup -->
+  <div id="word-popup" class="word-popup hidden"></div>
+
+  <!-- Feedback overlay -->
+  <div id="feedback-overlay" class="settings-overlay hidden">
+    <div class="settings-modal" style="max-width:520px">
+      <div class="settings-header">
+        <h2 data-i18n="feedback_title">Send Feedback</h2>
+        <button id="feedback-close" class="close-btn">×</button>
+      </div>
+      <div class="settings-body">
+        <p style="color:var(--text-soft);margin-top:0" data-i18n="feedback_intro">Found a bug or want to suggest something? Send a quick message.</p>
+        <div class="settings-row" style="flex-direction:column;align-items:stretch">
+          <label data-i18n="feedback_type">Type</label>
+          <select id="feedback-type" class="settings-number" style="width:100%;text-align:left;padding:8px">
+            <option value="bug" data-i18n="feedback_bug">🐛 Bug</option>
+            <option value="feature" data-i18n="feedback_feature">💡 Feature idea</option>
+            <option value="content" data-i18n="feedback_content">📚 Content request</option>
+            <option value="other" data-i18n="feedback_other">💬 Other</option>
+          </select>
+        </div>
+        <div class="settings-row" style="flex-direction:column;align-items:stretch;margin-top:12px">
+          <label data-i18n="feedback_message">Message</label>
+          <textarea id="feedback-msg" rows="6" style="width:100%;padding:10px;border:1px solid var(--border);border-radius:8px;font-family:inherit;resize:vertical" placeholder=""></textarea>
+        </div>
+        <div class="settings-row" style="flex-direction:column;align-items:stretch;margin-top:12px">
+          <label data-i18n="feedback_from">From (optional email)</label>
+          <input id="feedback-email" type="email" class="settings-number" style="width:100%;text-align:left;padding:8px" placeholder="you@example.com" />
+        </div>
+        <div style="text-align:end;margin-top:18px">
+          <button id="feedback-send" class="primary-btn" data-i18n="feedback_send">Send</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="toast" class="toast hidden"></div>
+  <div id="celebrate" class="celebrate hidden"></div>
+
+  <!-- Scripts: order matters -->
+  <script src="static/js/i18n.js"></script>
+  <script src="static/js/illustrations.js"></script>
+  <script src="static/js/accessibility.js"></script>
+  <script src="static/js/streak.js"></script>
+  <script src="static/js/progress.js"></script>
+  <script src="static/js/settings.js"></script>
+  <script src="static/js/audio.js"></script>
+  <script src="static/js/xp.js"></script>
+  <script src="static/js/mascot.js"></script>
+  <script src="static/js/review.js"></script>
+  <script src="static/js/onboarding.js"></script>
+  <script src="static/js/modes/game.js"></script>
+  <script src="static/js/modes/flashcard.js"></script>
+  <script src="static/js/modes/story.js"></script>
+  <script src="static/js/main.js"></script>
+</body>
+</html>
