@@ -85,6 +85,13 @@
     <!-- Pick -->
     <section id="screen-pick" class="screen">
       <h1 class="big-title" data-i18n="pick_title">What do you want to learn?</h1>
+      <div id="type-chips" class="type-chips">
+        <button class="type-chip active" data-type="all" data-i18n="type_all">All</button>
+        <button class="type-chip" data-type="gemara" data-i18n="type_gemara">📚 Gemara</button>
+        <button class="type-chip" data-type="chumash" data-i18n="type_chumash">📖 Chumash</button>
+        <button class="type-chip" data-type="tanya" data-i18n="type_tanya">✡️ Tanya</button>
+        <button class="type-chip" data-type="mishnayos" data-i18n="type_mishnayos">📜 Mishnayos</button>
+      </div>
       <div id="picker-tools" class="picker-tools"></div>
       <div id="completion-map" class="completion-map"></div>
       <div id="weak-spots" class="weak-spots"></div>
@@ -97,10 +104,11 @@
       <h1 class="big-title" data-i18n="select_mode">How do you want to learn?</h1>
       <p id="sugya-summary" class="subtitle"></p>
       <p id="mode-recommendation" class="subtitle"></p>
-      <div class="big-buttons three-col">
-        <button class="choice-btn mode-btn" data-mode-choice="game"><span class="emoji">🎮</span><span data-i18n="mode_game">Game</span></button>
-        <button class="choice-btn mode-btn" data-mode-choice="flashcard"><span class="emoji">🃏</span><span data-i18n="mode_flashcard">Flashcards</span></button>
-        <button class="choice-btn mode-btn" data-mode-choice="story"><span class="emoji">📖</span><span data-i18n="mode_story">Story</span></button>
+      <div class="big-buttons three-col" id="mode-buttons">
+        <button class="choice-btn mode-btn" data-mode-choice="plain_read" data-for-types="tanya,chumash,mishnayos"><span class="emoji">📜</span><span data-i18n="mode_plain_read">Plain Read</span></button>
+        <button class="choice-btn mode-btn" data-mode-choice="game" data-for-types="gemara,mishnayos"><span class="emoji">🎮</span><span data-i18n="mode_game">Game</span></button>
+        <button class="choice-btn mode-btn" data-mode-choice="flashcard" data-for-types="gemara,tanya,chumash,mishnayos"><span class="emoji">🃏</span><span data-i18n="mode_flashcard">Flashcards</span></button>
+        <button class="choice-btn mode-btn" data-mode-choice="story" data-for-types="gemara,tanya,chumash,mishnayos"><span class="emoji">📖</span><span data-i18n="mode_story">Story</span></button>
       </div>
       <button class="back-btn" data-back="screen-pick" data-i18n="back">Back</button>
     </section>
@@ -245,6 +253,7 @@
   <script src="/static/js/modes/game.js"></script>
   <script src="/static/js/modes/flashcard.js"></script>
   <script src="/static/js/modes/story.js"></script>
+  <script src="/static/js/modes/plainread.js"></script>
   <script src="/static/js/main.js"></script>
 </body>
 </html>

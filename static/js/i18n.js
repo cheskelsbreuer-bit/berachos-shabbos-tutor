@@ -176,7 +176,19 @@
       feedback_message: "Message",
       feedback_from: "From (optional email)",
       feedback_send: "Send",
-      feedback_sent: "Thanks! Your email app should open."
+      feedback_sent: "Thanks! Your email app should open.",
+      mode_plain_read: "Plain Read",
+      mode_best_for_this: "Best for this:",
+      type_all: "All",
+      type_gemara: "📚 Gemara",
+      type_chumash: "📖 Chumash",
+      type_tanya: "✡️ Tanya",
+      type_mishnayos: "📜 Mishnayos",
+      plainread_hint: "👆 Tap any word for translation",
+      plainread_show_translation: "📝 Show plain translation",
+      plainread_explanation: "💭 Explanation",
+      plainread_rashi: "Rashi",
+      previous: "Previous"
     },
     yi: {
       app_title: "ברכות / שבת טוטאָר",
@@ -349,7 +361,19 @@
       feedback_message: "מעלדונג",
       feedback_from: "פֿון (אָפּציאָנעלע אימעיל)",
       feedback_send: "שיק",
-      feedback_sent: "אַ דאַנק! אייער אימעיל-אַפּ דאַרף זיך עפֿענען."
+      feedback_sent: "אַ דאַנק! אייער אימעיל-אַפּ דאַרף זיך עפֿענען.",
+      mode_plain_read: "פּשוט לערנען",
+      mode_best_for_this: "בעסטער פֿאַר דעם:",
+      type_all: "אַלע",
+      type_gemara: "📚 גמרא",
+      type_chumash: "📖 חומש",
+      type_tanya: "✡️ תניא",
+      type_mishnayos: "📜 משניות",
+      plainread_hint: "👆 טאַפּט אַ וואָרט פֿאַר איבערזעצונג",
+      plainread_show_translation: "📝 ווײַז די פּשוטע איבערזעצונג",
+      plainread_explanation: "💭 דערקלערונג",
+      plainread_rashi: "ראַשי",
+      previous: "פֿריִער"
     }
   };
 

@@ -4,6 +4,7 @@
   let CONTENT = null;
   let CURRENT_SUGYA = null;
   let PICKER_FILTER = "all"; // "all" or "bookmarks"
+  let TYPE_FILTER = "all";   // "all" / "gemara" / "tanya" / "chumash" / "mishnayos"
 
   // ============ Utilities (globals used by modes) ============
   window.escapeHtml = function (str) {
@@ -115,6 +116,7 @@
   function isRealCommentary(text) {
     return text && typeof text === "string" && !text.startsWith("[") && text.trim().length > 0;
   }
+  window.isRealCommentary = isRealCommentary;
 
   window.commentaryHtml = function (sec) {
     const lang = I18N.current;
@@ -384,10 +386,13 @@
     list.innerHTML = "";
 
     (CONTENT.masechtos || []).forEach((m) => {
+      // Filter by content type chip
+      if (TYPE_FILTER && TYPE_FILTER !== "all" && (m.content_type || "gemara") !== TYPE_FILTER) return;
       const mName = lang === "yi" ? (m.name_yiddish || m.name) : m.name;
       const masechtaHeader = document.createElement("div");
       masechtaHeader.className = "masechta-header";
-      masechtaHeader.innerHTML = '<h2 class="masechta-title">' + (lang === "yi" ? "מסכת " : "Masechet ") + escapeHtml(mName || "") + '</h2>';
+      const typeLabel = m.content_type ? '<span class="masechta-type-pill">' + I18N.t("type_" + m.content_type) + '</span>' : '';
+      masechtaHeader.innerHTML = '<h2 class="masechta-title">' + escapeHtml(mName || "") + ' ' + typeLabel + '</h2>';
       list.appendChild(masechtaHeader);
 
       (m.perakim || []).forEach((perek) => {
@@ -446,6 +451,12 @@
     showModeScreen(PROGRESS.state.preferredMode, "challenges");
   };
 
+  // Find the masechta containing the current sugya, get its content_type
+  function getCurrentContentType() {
+    const found = CURRENT_SUGYA && findSugya(CURRENT_SUGYA.id);
+    return (found && found.masechta && found.masechta.content_type) || "gemara";
+  }
+
   // ============ Mode screen ============
   window.showModeScreen = function (recommendedMode, reason) {
     const summary = document.getElementById("sugya-summary");
@@ -455,13 +466,29 @@
       summary.innerHTML = '<b>' + I18N.t("daf_label") + ' ' + escapeHtml(CURRENT_SUGYA.daf || "") + ':</b> ' + escapeHtml(title || "");
     } else summary.textContent = "";
 
+    // Filter mode buttons by current content type
+    const ctype = getCurrentContentType();
+    PROGRESS.state.currentContentType = ctype;
+    let firstVisibleMode = null;
+    document.querySelectorAll(".mode-btn").forEach((b) => {
+      const types = (b.dataset.forTypes || "").split(",").map(s => s.trim()).filter(Boolean);
+      const show = types.length === 0 || types.includes(ctype);
+      b.style.display = show ? "" : "none";
+      if (show && !firstVisibleMode) firstVisibleMode = b.dataset.modeChoice;
+    });
+
+    // Use masechta default_mode if available, else recommended, else first visible
+    const found = CURRENT_SUGYA && findSugya(CURRENT_SUGYA.id);
+    const masechtaDefault = found && found.masechta && found.masechta.default_mode;
+    const effectiveRec = masechtaDefault || recommendedMode || firstVisibleMode;
+
     const recEl = document.getElementById("mode-recommendation");
-    if (recommendedMode) {
-      const intro = reason === "quiz" ? I18N.t("mode_recommended_intro") : I18N.t("mode_chosen_for_challenges");
-      recEl.innerHTML = intro + " <b>" + I18N.t("mode_" + recommendedMode) + "</b>";
+    if (effectiveRec) {
+      const intro = masechtaDefault ? I18N.t("mode_best_for_this") : (reason === "quiz" ? I18N.t("mode_recommended_intro") : I18N.t("mode_chosen_for_challenges"));
+      recEl.innerHTML = intro + " <b>" + I18N.t("mode_" + effectiveRec) + "</b>";
     } else recEl.textContent = "";
     document.querySelectorAll(".mode-btn").forEach((b) => {
-      b.style.borderColor = (b.dataset.modeChoice === recommendedMode) ? "var(--primary)" : "";
+      b.style.borderColor = (b.dataset.modeChoice === effectiveRec) ? "var(--primary)" : "";
     });
     showScreen("screen-mode");
   };
@@ -518,6 +545,7 @@
     if (mode === "game") GAME.start(pageLike);
     else if (mode === "flashcard") FLASH.start(pageLike);
     else if (mode === "story") STORY.start(pageLike);
+    else if (mode === "plain_read") PLAINREAD.start(pageLike);
   };
 
   // ============ Smart review / Chazara ============
@@ -782,6 +810,16 @@
     });
   }
 
+  function wireTypeChips() {
+    document.querySelectorAll(".type-chip").forEach((chip) => {
+      chip.addEventListener("click", () => {
+        TYPE_FILTER = chip.dataset.type;
+        document.querySelectorAll(".type-chip").forEach(c => c.classList.toggle("active", c === chip));
+        renderPicker();
+      });
+    });
+  }
+
   function wireHeaderButtons() {
     document.getElementById("settings-btn").addEventListener("click", () => SETTINGS.open());
     document.getElementById("settings-close").addEventListener("click", () => SETTINGS.close());
@@ -854,6 +892,7 @@
     wireMode();
     wireBackButtons();
     wireHeaderButtons();
+    wireTypeChips();
 
     await loadContent();
 
