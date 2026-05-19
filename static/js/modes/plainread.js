@@ -92,6 +92,22 @@
       // Bottom hint
       html += '<div class="plainread-hint plainread-hint-bottom">' + I18N.t("plainread_hint") + '</div>';
 
+      // Sefaria full text panel (authoritative source)
+      const found = findSugya(this.page.id);
+      const masechta = found && found.masechta;
+      const sefRef = SEFARIA.refFor(this.sugya, masechta);
+      if (sefRef) {
+        html += '<details class="sefaria-panel"><summary>📖 ' + I18N.t("sefaria_full_text") + '</summary>';
+        html += '<div class="sefaria-panel-body" data-sefaria-ref="' + escapeHtml(sefRef) + '"><div class="sefaria-loading">…</div></div>';
+        html += '</details>';
+      }
+
+      // TorahAnytime shiur link
+      const taUrl = SEFARIA.torahAnytimeUrl(this.sugya, masechta);
+      if (taUrl) {
+        html += '<a class="torahanytime-btn" href="' + taUrl + '" target="_blank" rel="noopener">🎧 ' + I18N.t("listen_shiur") + '</a>';
+      }
+
       // Bottom action buttons
       html += '<div class="plainread-bottom-actions">';
       const hasQuiz = (this.sections || []).some(s => Array.isArray(s.answers) && s.answers.length > 0);
@@ -134,6 +150,20 @@
         nextBtn.addEventListener("click", () => pickSugyaAndStart(nxt.id, "plain_read"));
       }
       document.getElementById("pr-switch").addEventListener("click", () => showScreen("screen-mode"));
+
+      // Lazy-load Sefaria text when the panel is opened
+      const sefDetails = c.querySelector(".sefaria-panel");
+      if (sefDetails) {
+        sefDetails.addEventListener("toggle", async () => {
+          if (!sefDetails.open) return;
+          const body = sefDetails.querySelector(".sefaria-panel-body");
+          if (body.dataset.loaded === "1") return;
+          const ref = body.dataset.sefariaRef;
+          const result = await SEFARIA.fetchRef(ref);
+          body.innerHTML = SEFARIA.renderResult(result);
+          body.dataset.loaded = "1";
+        });
+      }
 
       // Mark as completed for streak/progress
       PROGRESS.setStoryProgress(this.page.id, this.sections.length, true);

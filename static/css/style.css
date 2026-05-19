@@ -1203,3 +1203,72 @@ body[data-contrast="high"] .pr-section {
   width: 100%;
   text-align: center;
 }
+
+/* V8: Sefaria + TorahAnytime panels */
+.sefaria-panel {
+  background: #eef2ff;
+  border: 2px solid #6366f1;
+  border-radius: var(--radius-lg);
+  margin-top: 18px;
+  margin-bottom: 12px;
+  overflow: hidden;
+}
+body[data-contrast="high"] .sefaria-panel { background: #1a1a1a; border-color: #ffd700; }
+.sefaria-panel summary {
+  padding: 14px 18px;
+  font-weight: 700;
+  cursor: pointer;
+  background: #e0e7ff;
+  user-select: none;
+  list-style: none;
+}
+.sefaria-panel summary::-webkit-details-marker { display: none; }
+.sefaria-panel summary::before { content: "▸ "; transition: transform 0.2s; display: inline-block; }
+.sefaria-panel[open] summary::before { transform: rotate(90deg); }
+.sefaria-panel-body { padding: 16px 18px; }
+.sefaria-loading { color: var(--text-soft); font-style: italic; }
+.sefaria-err { color: var(--danger); padding: 8px 0; }
+.sefaria-ref {
+  font-size: 0.85em; color: var(--text-soft);
+  margin-bottom: 10px; font-weight: 600;
+}
+.sefaria-hebrew {
+  direction: rtl; text-align: right;
+  font-family: "SBL Hebrew", "Noto Sans Hebrew", "Times New Roman", serif;
+  font-size: 1.15em; line-height: 1.85;
+  color: #1f2937;
+}
+body[data-contrast="high"] .sefaria-hebrew { color: #ffd700; }
+.sefaria-hebrew p { margin: 0 0 10px; }
+.sefaria-translation {
+  margin-top: 12px;
+  background: white;
+  border: 1px solid #c7d2fe;
+  border-radius: 8px;
+}
+body[data-contrast="high"] .sefaria-translation { background: #2a2a2a; border-color: #ffd700; }
+.sefaria-translation summary {
+  background: #f5f3ff; padding: 10px 14px; font-weight: 600;
+  font-size: 0.9em; cursor: pointer; list-style: none;
+}
+.sefaria-translation summary::-webkit-details-marker { display: none; }
+.sefaria-translation-body { padding: 12px 14px; line-height: 1.6; }
+.sefaria-translation-body p { margin: 0 0 8px; }
+.sefaria-attribution {
+  margin-top: 12px; font-size: 0.78em; color: var(--text-soft); text-align: end;
+}
+.sefaria-attribution a { color: var(--primary); }
+
+.torahanytime-btn {
+  display: block;
+  background: linear-gradient(135deg, #ec4899, #8b5cf6);
+  color: white;
+  text-decoration: none;
+  text-align: center;
+  font-weight: 700;
+  padding: 14px 18px;
+  border-radius: var(--radius);
+  margin-top: 14px;
+  transition: transform 0.15s;
+}
+.torahanytime-btn:hover { transform: translateY(-2px); }

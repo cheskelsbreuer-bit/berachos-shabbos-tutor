@@ -194,7 +194,9 @@
       search_no_results: "No matches found.",
       search_hits: "matches",
       daily_plan_title: "Today's plan",
-      daily_plan_setting: "Daily plan on welcome-back"
+      daily_plan_setting: "Daily plan on welcome-back",
+      sefaria_full_text: "Full verified text from Sefaria",
+      listen_shiur: "Listen to a shiur on TorahAnytime"
     },
     yi: {
       app_title: "ברכות / שבת טוטאָר",
@@ -385,7 +387,9 @@
       search_no_results: "ניטאָ קיין מאַטשעס.",
       search_hits: "מאַטשעס",
       daily_plan_title: "הײַנטיקער פּלאַן",
-      daily_plan_setting: "טאָגיקער פּלאַן אויף ברוכים הבאים"
+      daily_plan_setting: "טאָגיקער פּלאַן אויף ברוכים הבאים",
+      sefaria_full_text: "פֿולער איבערגעקוקטער טעקסט פֿון ספֿאַריא",
+      listen_shiur: "הערט אַ שיעור אויף TorahAnytime"
     }
   };
 
