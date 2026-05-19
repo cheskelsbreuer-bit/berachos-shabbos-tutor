@@ -14,23 +14,25 @@
       this.render();
     },
 
-    /** Wrap each known word in the Hebrew string with a tappable span. */
+    /** Wrap EVERY Hebrew word in a tappable span. Lookup happens live via Sefaria lexicon. */
     renderTappableHebrew(hebrewText, words, secIdx) {
       if (!hebrewText) return "";
-      let html = escapeHtml(hebrewText);
-      if (!words || !words.length) return html;
-      const sorted = [...words].sort((a, b) => (b.a || "").length - (a.a || "").length);
-      sorted.forEach((w, i) => {
-        if (!w.a) return;
-        const escA = escapeHtml(w.a);
-        const safeId = "pw-" + secIdx + "-" + i;
-        const parts = html.split(escA);
-        if (parts.length > 1) {
-          html = parts.join('<span class="pr-word" data-pw="' + safeId + '">' + escA + '</span>');
-          PLAINREAD._wordMap[safeId] = w;
-        }
-      });
-      return html;
+      // Pre-canned word map (still supported as fallback) — but every Hebrew token gets the .pr-word class.
+      PLAINREAD._wordMap = PLAINREAD._wordMap || {};
+      if (words && words.length) {
+        words.forEach((w) => {
+          if (!w || !w.a) return;
+          PLAINREAD._wordMap["canned:" + w.a] = w;
+        });
+      }
+      // Split on whitespace, wrap any Hebrew-containing token.
+      const tokens = hebrewText.split(/(\s+)/);
+      return tokens.map((tok) => {
+        if (/^\s+$/.test(tok)) return tok;
+        // Anything containing Hebrew letters becomes tappable
+        if (!/[֐-׿]/.test(tok)) return escapeHtml(tok);
+        return '<span class="pr-word" data-w="' + escapeHtml(tok) + '">' + escapeHtml(tok) + '</span>';
+      }).join("");
     },
 
     render() {
@@ -164,14 +166,17 @@
 
       wireCardActions(c, this.page.id, this.sections[0] ? this.sections[0].id : "", () => this.render());
 
-      // Wire tappable words
+      // Wire tappable words — every Hebrew token, live lexicon lookup
       c.querySelectorAll(".pr-word").forEach((span) => {
         span.addEventListener("click", (e) => {
           e.stopPropagation();
-          const id = span.dataset.pw;
-          const w = PLAINREAD._wordMap[id];
-          if (!w) return;
-          showWordPopup(span, w);
+          const rawWord = span.dataset.w;
+          if (!rawWord) return;
+          // Check pre-canned first
+          const canned = PLAINREAD._wordMap["canned:" + rawWord];
+          if (canned) { showWordPopup(span, canned); return; }
+          // Live Sefaria lexicon lookup
+          showWordPopupLive(span, rawWord);
         });
       });
 
@@ -214,6 +219,82 @@
 
     _wordMap: {}
   };
+
+  function stripNikud(w) {
+    return String(w || "").replace(/[֑-ׇ]/g, "").replace(/[.,;:()\[\]"'׳״־?!]/g, "").trim();
+  }
+
+  async function showWordPopupLive(anchor, rawWord) {
+    const clean = stripNikud(rawWord);
+    const popup = document.getElementById("word-popup");
+    popup.innerHTML =
+      '<div class="word-popup-aramaic">' + escapeHtml(clean) + '</div>' +
+      '<div class="word-popup-en"><i>Looking up…</i></div>';
+    positionPopup(popup, anchor);
+    popup.classList.remove("hidden");
+
+    try {
+      const res = await fetch("/api/lexicon/" + encodeURIComponent(clean));
+      const data = await res.json();
+      const entries = Array.isArray(data) ? data : (data && Array.isArray(data.lexicon_entries) ? data.lexicon_entries : []);
+      if (!entries.length) {
+        popup.innerHTML =
+          '<div class="word-popup-aramaic">' + escapeHtml(clean) + '</div>' +
+          '<div class="word-popup-en"><i>No dictionary entry found.</i></div>';
+      } else {
+        const senses = [];
+        const walk = (node) => {
+          if (!node) return;
+          if (typeof node === "string") {
+            const s = node.replace(/<[^>]+>/g, "").trim();
+            if (s) senses.push(s);
+            return;
+          }
+          if (Array.isArray(node)) { node.forEach(walk); return; }
+          if (typeof node === "object") {
+            if (node.definition) walk(node.definition);
+            if (node.senses) walk(node.senses);
+            if (node.content) walk(node.content);
+          }
+        };
+        const e = entries[0];
+        walk(e.content);
+        walk(e.senses);
+        walk(e.definition);
+        const def = senses.slice(0, 3).join(" • ").slice(0, 280) || "No definition found.";
+        const source = (e.parent_lexicon_details && (e.parent_lexicon_details.name || e.parent_lexicon)) || e.parent_lexicon || "";
+        popup.innerHTML =
+          '<div class="word-popup-aramaic">' + escapeHtml(e.headword || clean) + '</div>' +
+          '<div class="word-popup-en">' + escapeHtml(def) + '</div>' +
+          (source ? '<div class="word-popup-yi" style="font-size:0.75em;color:#6b7280;margin-top:6px">— ' + escapeHtml(source) + '</div>' : '');
+      }
+    } catch (err) {
+      popup.innerHTML =
+        '<div class="word-popup-aramaic">' + escapeHtml(clean) + '</div>' +
+        '<div class="word-popup-en"><i>Lookup failed.</i></div>';
+    }
+    positionPopup(popup, anchor);
+    AUDIO.play("click");
+    setTimeout(() => {
+      const dismiss = (e) => {
+        if (!popup.contains(e.target) && e.target !== anchor) {
+          popup.classList.add("hidden");
+          document.removeEventListener("click", dismiss);
+        }
+      };
+      document.addEventListener("click", dismiss);
+    }, 0);
+  }
+
+  function positionPopup(popup, anchor) {
+    const rect = anchor.getBoundingClientRect();
+    const popRect = popup.getBoundingClientRect();
+    let left = rect.left + window.scrollX + rect.width / 2 - popRect.width / 2;
+    let top = rect.bottom + window.scrollY + 8;
+    left = Math.max(8, Math.min(left, window.innerWidth - popRect.width - 8));
+    popup.style.left = left + "px";
+    popup.style.top = top + "px";
+  }
 
   function showWordPopup(anchor, word) {
     const popup = document.getElementById("word-popup");

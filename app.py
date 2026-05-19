@@ -42,6 +42,20 @@ def api_sugya(sugya_id):
     return jsonify({"error": "sugya not found"}), 404
 
 
+@app.route("/api/lexicon/<path:word>")
+def lexicon_proxy(word):
+    """Proxy Sefaria's lexicon API so the browser can do live word lookups."""
+    import urllib.parse
+    import urllib.request
+    url = "https://www.sefaria.org/api/words/" + urllib.parse.quote(word) + "?never_split=1"
+    try:
+        with urllib.request.urlopen(url, timeout=10) as r:
+            data = json.loads(r.read().decode("utf-8"))
+        return jsonify(data)
+    except Exception as e:
+        return jsonify({"error": str(e)}), 502
+
+
 @app.route("/static/<path:filename>")
 def static_files(filename):
     return send_from_directory(app.static_folder, filename)

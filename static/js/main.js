@@ -727,14 +727,21 @@
     document.getElementById("due-btn").addEventListener("click", () => startSmartReview());
   }
 
-  // ============ Onboarding wiring ============
+  // ============ Onboarding wiring (simplified: skip age/quiz/challenges) ============
   function wireLanguage() {
     document.querySelectorAll("[data-lang-choice]").forEach((btn) => {
       btn.addEventListener("click", () => {
         const lang = btn.dataset.langChoice;
         I18N.setLanguage(lang);
         PROGRESS.setLanguage(lang);
-        showScreen("screen-age");
+        // Default adult/no-challenges/plain-read; go straight to picker
+        PROGRESS.setAgeGroup("adults");
+        PROGRESS.setChallenges([]);
+        PROGRESS.setPreferredMode("plain_read");
+        document.body.setAttribute("data-age", "adults");
+        document.body.setAttribute("data-mode", "plain_read");
+        renderPicker();
+        showScreen("screen-pick");
       });
     });
   }
