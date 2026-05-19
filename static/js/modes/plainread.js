@@ -40,43 +40,80 @@
 
       const isChumash = (PROGRESS.state.currentContentType === "chumash") || (this.sugya && this.sugya.id && this.sugya.id.startsWith("chumash"));
 
+      // Two cases:
+      //   A) Each section has its OWN Hebrew (Tanya, Chumash merged, Avos merged) → render per-section blocks.
+      //   B) Only sugya-level Hebrew exists (older Gemara sugyos) → render ONE Hebrew block at top, then explanation-only sections below.
+      const anySectionHasOwnHebrew = this.sections.some(s => !!s.aramaic);
+      const sugyaLevelHebrew = !anySectionHasOwnHebrew && this.sugya && this.sugya.aramaic;
+
       let html = '<div class="plainread-container">';
       html += cardActionsRow(this.sections[0] ? this.sections[0].id : "");
 
-      // Section block: full Hebrew + tappable words. Translation/explanation/Rashi as collapsible below each.
+      // Case B: top-of-page sugya Hebrew block (shown once)
+      if (sugyaLevelHebrew) {
+        const sugyaWords = this.sugya.aramaic_words;
+        const sugyaTappable = this.renderTappableHebrew(this.sugya.aramaic, sugyaWords, -1);
+        const sugyaTranslation = lang === "yi"
+          ? (this.sugya.aramaic_translation_yiddish || this.sugya.aramaic_translation)
+          : this.sugya.aramaic_translation;
+        html += '<div class="pr-section pr-section-top">';
+        html += '<div class="plainread-hebrew">' + sugyaTappable + '</div>';
+        if (sugyaTranslation) {
+          html += '<details class="plainread-translation"><summary>' + I18N.t("plainread_show_translation") + '</summary>';
+          html += '<div class="plainread-translation-body">' + escapeHtml(sugyaTranslation) + '</div>';
+          html += '</details>';
+        }
+        html += '</div>';
+      }
+
+      // Per-section blocks
       this.sections.forEach((sec, idx) => {
-        const original = sec.aramaic || (this.sugya && this.sugya.aramaic);
+        const ownAramaic = sec.aramaic; // strictly section-level, NO fallback
         const sectionWords = (sec.aramaic_words && sec.aramaic_words.length) ? sec.aramaic_words : (this.sugya && this.sugya.aramaic_words);
         const translation = lang === "yi"
-          ? (sec.aramaic_translation_yiddish || sec.aramaic_translation || (this.sugya && (this.sugya.aramaic_translation_yiddish || this.sugya.aramaic_translation)))
-          : (sec.aramaic_translation || (this.sugya && this.sugya.aramaic_translation));
+          ? (sec.aramaic_translation_yiddish || sec.aramaic_translation)
+          : sec.aramaic_translation;
         const explanation = lang === "yi" ? (sec.text_yiddish || sec.text) : sec.text;
+        const term = lang === "yi" ? (sec.term_yiddish || sec.term) : sec.term;
+        const definition = lang === "yi" ? (sec.definition_yiddish || sec.definition) : sec.definition;
         const hasRashi = isRealCommentary(sec.rashi) || isRealCommentary(sec.rashi_explanation);
-
-        if (!original) return;
-        const tappableHebrew = this.renderTappableHebrew(original, sectionWords, idx);
+        const hasAnyContent = ownAramaic || explanation || term || hasRashi;
+        if (!hasAnyContent) return;
 
         html += '<div class="pr-section">';
-        // Optional small marker: pasuk number, mishnah number, etc.
         const marker = sec.marker || (sec.id && sec.id.match(/(\d+(?::\d+)?)$/) ? sec.id.match(/(\d+(?::\d+)?)$/)[1] : "");
         if (marker && this.sections.length > 1) {
           html += '<div class="pr-section-marker">' + escapeHtml(marker) + '</div>';
         }
-        html += '<div class="plainread-hebrew">' + tappableHebrew + '</div>';
 
-        // Per-section translation (collapsible, default closed for clean reading)
-        if (translation) {
+        // Section-level Hebrew (only if section has its own)
+        if (ownAramaic) {
+          const tappableHebrew = this.renderTappableHebrew(ownAramaic, sectionWords, idx);
+          html += '<div class="plainread-hebrew">' + tappableHebrew + '</div>';
+        }
+
+        // Term + definition (glossary-style block for sugyos that don't have section-level Hebrew)
+        if (!ownAramaic && term) {
+          html += '<div class="pr-section-glossary"><b>' + escapeHtml(term) + '</b>';
+          if (definition) html += ' — ' + escapeHtml(definition);
+          html += '</div>';
+        }
+
+        // Section-level translation (only if section has own)
+        if (ownAramaic && translation) {
           html += '<details class="plainread-translation"><summary>' + I18N.t("plainread_show_translation") + '</summary>';
           html += '<div class="plainread-translation-body">' + escapeHtml(translation) + '</div>';
           html += '</details>';
         }
-        // Per-section explanation (collapsible)
+
+        // Explanation (per section)
         if (explanation) {
-          html += '<details class="plainread-explanation"><summary>' + I18N.t("plainread_explanation") + '</summary>';
+          html += '<details class="plainread-explanation"' + (ownAramaic ? '' : ' open') + '><summary>' + I18N.t("plainread_explanation") + '</summary>';
           html += '<div class="plainread-explanation-body">' + escapeHtml(explanation) + '</div>';
           html += '</details>';
         }
-        // Per-section Rashi for Chumash
+
+        // Rashi
         if (isChumash && hasRashi) {
           const rashi = lang === "yi" ? (sec.rashi_yiddish || sec.rashi) : sec.rashi;
           const rashiExp = lang === "yi" ? (sec.rashi_explanation_yiddish || sec.rashi_explanation) : sec.rashi_explanation;
@@ -86,7 +123,7 @@
           if (rashiExp) html += '<div class="plainread-rashi-explanation">' + escapeHtml(rashiExp) + '</div>';
           html += '</div></details>';
         }
-        html += '</div>'; // .pr-section
+        html += '</div>';
       });
 
       // Bottom hint
