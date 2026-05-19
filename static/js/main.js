@@ -760,8 +760,8 @@
     });
   }
 
-  // Update this email to your real address — feedback goes here.
-  const FEEDBACK_EMAIL = "chayabreuer@example.com";
+  // Feedback goes to this email.
+  const FEEDBACK_EMAIL = "chesky2039@gmail.com";
 
   function wireFeedback() {
     const overlay = document.getElementById("feedback-overlay");
