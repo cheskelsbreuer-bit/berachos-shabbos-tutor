@@ -150,9 +150,15 @@
 
     renderDone() {
       const c = document.getElementById("learn-container");
+      // Check if any sections have a real quiz (non-empty answers)
+      const hasQuiz = (this.sections || []).some(s => Array.isArray(s.answers) && s.answers.length > 0);
+
       let html = '<div class="game-final">';
       html += '<h2>' + I18N.t("done") + '</h2>';
-      html += '<div class="big-buttons two-col" style="max-width:520px;margin:18px auto;">';
+      html += '<div class="big-buttons two-col" style="max-width:560px;margin:18px auto;">';
+      if (hasQuiz) {
+        html += '<button class="primary-btn" id="pr-quiz">🎯 ' + I18N.t("review_quiz") + '</button>';
+      }
       html += '<button class="primary-btn" id="pr-replay">' + I18N.t("replay") + '</button>';
       const nxt = findNextSugya(this.page.id);
       if (nxt) html += '<button class="primary-btn" id="pr-next-sugya">' + I18N.t("next_sugya") + '</button>';
@@ -164,6 +170,12 @@
       if (nxt) {
         document.getElementById("pr-next-sugya").addEventListener("click", () => {
           pickSugyaAndStart(nxt.id, "plain_read");
+        });
+      }
+      if (hasQuiz) {
+        document.getElementById("pr-quiz").addEventListener("click", () => {
+          // Switch to game mode on the same sugya
+          GAME.start({ id: this.page.id, sections: this.sections });
         });
       }
       if (PROGRESS.state.ageGroup === "kids") { celebrate(); MASCOT.react("excited"); AUDIO.play("sticker"); }

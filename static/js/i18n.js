@@ -188,7 +188,8 @@
       plainread_show_translation: "📝 Show plain translation",
       plainread_explanation: "💭 Explanation",
       plainread_rashi: "Rashi",
-      previous: "Previous"
+      previous: "Previous",
+      review_quiz: "Review with a quiz"
     },
     yi: {
       app_title: "ברכות / שבת טוטאָר",
@@ -373,7 +374,8 @@
       plainread_show_translation: "📝 ווײַז די פּשוטע איבערזעצונג",
       plainread_explanation: "💭 דערקלערונג",
       plainread_rashi: "ראַשי",
-      previous: "פֿריִער"
+      previous: "פֿריִער",
+      review_quiz: "וויסע אַ קעשיא־וויקטאָרינע"
     }
   };
 
