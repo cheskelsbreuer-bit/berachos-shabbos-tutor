@@ -1,4 +1,12 @@
-# Learning Tutor
+# Berachos / Shabbos Learning Tutor
+
+**Live app:** https://learning-tutor-delta.vercel.app
+
+**GitHub:** https://github.com/cheskelsbreuer-bit/berachos-shabbos-tutor
+
+---
+
+
 
 A bilingual (English + Yiddish) full-stack learning tutor web app with three learning modes (Game, Flashcard, Story), a diagnostic quiz, daily streak tracking, and accessibility controls. Built with Flask + vanilla HTML/CSS/JS.
 
