@@ -195,7 +195,7 @@
       });
 
       // Wire rabbi-bio chips inside the daf summary
-      c.querySelectorAll("[data-rabbi]").forEach((btn) => {
+      c.querySelectorAll(".daf-summary [data-rabbi]").forEach((btn) => {
         btn.addEventListener("click", (e) => {
           e.stopPropagation();
           if (typeof window.showRabbiBio === "function") {
@@ -203,6 +203,10 @@
           }
         });
       });
+      // Auto-detect Rabbi names inside the rendered Hebrew (double-tap to see bio)
+      if (typeof window.markRabbiNamesInDOM === "function") {
+        window.markRabbiNamesInDOM(c);
+      }
 
       // Wire sentence-bookmark buttons
       c.querySelectorAll("[data-section-bookmark]").forEach((btn) => {

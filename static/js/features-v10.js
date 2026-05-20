@@ -26,6 +26,70 @@
     return html;
   };
 
+  // Strip nikud/punctuation for matching
+  function _stripForMatch(s) {
+    return String(s || "").replace(/[֑-ׇ]/g, "").replace(/[.,;:()\[\]"'׳״?!]/g, "").trim();
+  }
+
+  /** After Plain Read renders, walk consecutive .pr-word spans and add a Rabbi-bio
+      indicator on any group whose stripped text matches a Rabbi pattern. */
+  global.markRabbiNamesInDOM = function (root) {
+    if (!root || typeof RABBIS !== "object") return;
+    const all = RABBIS.all();
+    // Build pattern list (stripped form for matching)
+    const patterns = [];
+    all.forEach((r) => {
+      r.patterns.forEach((p) => {
+        const stripped = _stripForMatch(p);
+        if (stripped.length >= 3) patterns.push({ stripped, key: p, rabbi: r });
+      });
+    });
+    patterns.sort((a, b) => b.stripped.length - a.stripped.length);
+
+    root.querySelectorAll(".pr-section").forEach((section) => {
+      const words = Array.from(section.querySelectorAll(".pr-word"));
+      // Mark by collecting consecutive runs of words and checking against patterns
+      const used = new Set();
+      for (let i = 0; i < words.length; i++) {
+        if (used.has(i)) continue;
+        // Build phrases starting at i (1-word, 2-word, 3-word)
+        for (let span = 3; span >= 1; span--) {
+          if (i + span > words.length) continue;
+          const slice = words.slice(i, i + span);
+          if (slice.some((w, k) => used.has(i + k))) continue;
+          const phrase = slice.map(w => _stripForMatch(w.dataset.w || w.textContent)).join(" ");
+          const hit = patterns.find(p => p.stripped === phrase);
+          if (hit) {
+            slice.forEach((w, k) => {
+              w.classList.add("rabbi-name");
+              w.dataset.rabbi = hit.key;
+              if (k === 0) w.classList.add("rabbi-name-start");
+              if (k === slice.length - 1) w.classList.add("rabbi-name-end");
+              used.add(i + k);
+            });
+            i += span - 1; // skip the words we consumed
+            break;
+          }
+        }
+      }
+      // Wire up bio popup on click — but only intercept on the first word
+      section.querySelectorAll(".rabbi-name").forEach((w) => {
+        w.addEventListener("click", (e) => {
+          // Only show bio if we shift-clicked OR if user wants bio mode
+          // To avoid breaking the word-translation click, we use a small flag:
+          // double-click → bio, single click → word def (existing behavior)
+        }, true);
+        w.addEventListener("dblclick", (e) => {
+          e.stopPropagation();
+          e.preventDefault();
+          if (w.dataset.rabbi && typeof window.showRabbiBio === "function") {
+            window.showRabbiBio(w, w.dataset.rabbi);
+          }
+        });
+      });
+    });
+  };
+
   global.showRabbiBio = function (anchor, patternKey) {
     const rabbi = RABBIS.lookup(patternKey);
     if (!rabbi) return;

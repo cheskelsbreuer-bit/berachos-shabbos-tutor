@@ -1758,3 +1758,19 @@ body[data-contrast="high"] .daily-torah { background: #1a1a1a; color: #ffd700; b
   color: white;
   border-color: var(--primary);
 }
+
+/* Auto-detected Rabbi names in text — subtle blue underline; double-tap for bio */
+.pr-word.rabbi-name {
+  border-bottom: 2px dotted rgba(99, 102, 241, 0.6);
+  background: rgba(99, 102, 241, 0.06);
+}
+.pr-word.rabbi-name:hover { background: rgba(99, 102, 241, 0.18); }
+.pr-word.rabbi-name::after {
+  content: "👤";
+  font-size: 0.55em;
+  margin-inline-start: 1px;
+  opacity: 0.55;
+  vertical-align: super;
+}
+.pr-word.rabbi-name-end::after { content: "👤"; }
+.pr-word.rabbi-name:not(.rabbi-name-end)::after { content: ""; }

@@ -476,13 +476,22 @@
       summary.innerHTML = '<b>' + I18N.t("daf_label") + ' ' + escapeHtml(CURRENT_SUGYA.daf || "") + ':</b> ' + escapeHtml(title || "");
     } else summary.textContent = "";
 
-    // Filter mode buttons by current content type
+    // Filter mode buttons by current content type AND whether the sugya actually has data for that mode
     const ctype = getCurrentContentType();
     PROGRESS.state.currentContentType = ctype;
+    // Detect available data on the sugya
+    const sections = (CURRENT_SUGYA && CURRENT_SUGYA.sections) || [];
+    const hasQuiz = sections.some(s => Array.isArray(s.answers) && s.answers.length > 0 && s.question);
+    const hasTerms = sections.some(s => (s.term || "").trim() && (s.definition || "").trim());
+
     let firstVisibleMode = null;
     document.querySelectorAll(".mode-btn").forEach((b) => {
       const types = (b.dataset.forTypes || "").split(",").map(s => s.trim()).filter(Boolean);
-      const show = types.length === 0 || types.includes(ctype);
+      let show = types.length === 0 || types.includes(ctype);
+      // Hide game mode if no quiz data; hide flashcard if no terms
+      if (show && b.dataset.modeChoice === "game" && !hasQuiz) show = false;
+      if (show && b.dataset.modeChoice === "flashcard" && !hasTerms) show = false;
+      // Story mode doesn't strictly need quiz; it can show just the text
       b.style.display = show ? "" : "none";
       if (show && !firstVisibleMode) firstVisibleMode = b.dataset.modeChoice;
     });
