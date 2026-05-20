@@ -110,17 +110,17 @@
           html += '</div>';
         }
 
-        // ONE inline English block per section — visible by default, not collapsed.
-        // If we have a curated explanation that differs from the translation, show that as a
-        // separate "What's happening here" note. Otherwise just show the translation.
+        // BOTH translation and explanation are collapsible (closed by default — focus stays on the Hebrew).
+        // If both texts are identical (Sefaria-built content), only show one.
         const sameText = translation && explanation && translation.trim() === explanation.trim();
         if (ownAramaic && translation) {
-          html += '<div class="plainread-translation-inline">' + escapeHtml(translation) + '</div>';
+          html += '<details class="pr-collapse pr-collapse-translation"><summary>📝 ' + (I18N.current === "yi" ? "פּשוט איבערזעצונג" : "Plain translation") + '</summary>';
+          html += '<div class="pr-collapse-body">' + escapeHtml(translation) + '</div>';
+          html += '</details>';
         }
-        if (explanation && !sameText && !(ownAramaic && translation && translation === explanation)) {
-          // Curated commentary distinct from the raw translation
-          html += '<details class="plainread-explanation" open><summary>💭 ' + I18N.t("plainread_explanation") + '</summary>';
-          html += '<div class="plainread-explanation-body">' + escapeHtml(explanation) + '</div>';
+        if (explanation && !sameText) {
+          html += '<details class="pr-collapse pr-collapse-explanation"><summary>💭 ' + (I18N.current === "yi" ? "וואָס דאָס מיינט" : "What this means") + '</summary>';
+          html += '<div class="pr-collapse-body">' + escapeHtml(explanation) + '</div>';
           html += '</details>';
         }
 
@@ -315,14 +315,19 @@
         walk(e.content);
         walk(e.senses);
         walk(e.definition);
-        const limit = extended ? 8 : 3;
-        const maxLen = extended ? 800 : 280;
-        const def = senses.slice(0, limit).join(" • ").slice(0, maxLen) || "No definition found.";
-        const source = (e.parent_lexicon_details && (e.parent_lexicon_details.name || e.parent_lexicon)) || e.parent_lexicon || "";
+        // Clean: just the first short sense by default. Long-press shows more.
+        let def;
+        if (extended) {
+          def = senses.slice(0, 5).join(" • ").slice(0, 600) || "No definition found.";
+        } else {
+          // Take the very first sense, trim to the first sentence/clause for cleanliness
+          const first = (senses[0] || "").split(/[.;•]/)[0].trim();
+          def = first || senses[0] || "No definition found.";
+          if (def.length > 100) def = def.slice(0, 100) + "…";
+        }
         popup.innerHTML =
           '<div class="word-popup-aramaic">' + escapeHtml(e.headword || clean) + '</div>' +
-          '<div class="word-popup-en">' + escapeHtml(def) + '</div>' +
-          (source ? '<div class="word-popup-yi" style="font-size:0.75em;color:#6b7280;margin-top:6px">— ' + escapeHtml(source) + '</div>' : '');
+          '<div class="word-popup-en">' + escapeHtml(def) + '</div>';
       }
     } catch (err) {
       popup.innerHTML =

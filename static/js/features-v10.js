@@ -96,10 +96,12 @@
     const lang = I18N.current;
     const bio = RABBIS.bio(rabbi, lang);
     const popup = document.getElementById("word-popup");
+    popup.classList.add("rabbi-popup");
     popup.innerHTML =
-      '<div class="word-popup-aramaic">' + escapeHtml(bio.name) + '</div>' +
-      '<div class="word-popup-en" style="font-size:0.78em;color:#6b7280">' + escapeHtml(bio.era) + '</div>' +
-      '<div class="word-popup-en" style="margin-top:6px;line-height:1.5">' + escapeHtml(bio.description) + '</div>';
+      '<div class="rabbi-popup-name">👤 ' + escapeHtml(bio.name) + '</div>' +
+      '<div class="rabbi-popup-era">' + escapeHtml(bio.era) + '</div>' +
+      '<div class="rabbi-popup-desc">' + escapeHtml(bio.description) + '</div>' +
+      '<div class="rabbi-popup-hint">' + (lang === "yi" ? "אַלע מאָל וווּ ער רעדט זענען איצט הילייטעט." : "All places he speaks are now highlighted.") + '</div>';
     popup.classList.remove("hidden");
     const rect = anchor.getBoundingClientRect();
     const popRect = popup.getBoundingClientRect();
@@ -108,16 +110,35 @@
     left = Math.max(8, Math.min(left, window.innerWidth - popRect.width - 8));
     popup.style.left = left + "px";
     popup.style.top = top + "px";
+
+    // Highlight every mention of THIS rabbi (by all their pattern keys)
+    highlightAllMentions(rabbi);
+
     setTimeout(() => {
       const dismiss = (e) => {
         if (!popup.contains(e.target) && e.target !== anchor) {
           popup.classList.add("hidden");
+          popup.classList.remove("rabbi-popup");
+          clearAllMentions();
           document.removeEventListener("click", dismiss);
         }
       };
       document.addEventListener("click", dismiss);
     }, 0);
   };
+
+  /** Highlight every Rabbi-name span belonging to the same rabbi entry. */
+  function highlightAllMentions(rabbi) {
+    clearAllMentions();
+    const keys = new Set(rabbi.patterns);
+    document.querySelectorAll(".pr-word.rabbi-name").forEach((w) => {
+      if (keys.has(w.dataset.rabbi)) w.classList.add("rabbi-highlighted");
+    });
+  }
+  function clearAllMentions() {
+    document.querySelectorAll(".rabbi-highlighted").forEach((w) => w.classList.remove("rabbi-highlighted"));
+  }
+  global.clearRabbiHighlights = clearAllMentions;
 
   // English names → Hebrew lookup key so we can show a bio
   function englishToHebrewRabbi(englishName) {
