@@ -12,26 +12,36 @@
       <button id="home-btn" class="icon-btn" aria-label="Home">🏠</button>
       <span id="app-title" class="app-title" data-i18n="app_title">Learning Tutor</span>
     </div>
-    <div class="header-center">
-      <div id="xp-bar-wrap" class="xp-bar-wrap"></div>
-      <div id="daily-goal-bar" class="daily-goal-bar"></div>
-    </div>
     <div class="header-right">
       <span id="streak-badge" class="streak-badge hidden">
         <span class="flame">🔥</span><span id="streak-count">0</span>
       </span>
-      <button id="focus-btn" class="icon-btn" aria-label="Focus">🎯</button>
-      <button id="sbs-btn" class="icon-btn" aria-label="Side by side">⇔</button>
-      <button id="chazara-btn" class="icon-btn" aria-label="Chazara">🔁</button>
-      <button id="mistakes-btn" class="icon-btn" aria-label="Mistakes">📋</button>
-      <button id="notes-btn" class="icon-btn" aria-label="Notes">📝</button>
-      <button id="bookmarks-btn" class="icon-btn" aria-label="Bookmarks">🔖</button>
       <button id="search-btn" class="icon-btn" aria-label="Search">🔍</button>
-      <button id="feedback-btn" class="icon-btn" aria-label="Feedback">💬</button>
-      <button id="settings-btn" class="icon-btn" aria-label="Settings">⚙️</button>
-      <button id="lang-toggle" class="lang-btn" aria-label="Language">🌐</button>
+      <button id="lang-toggle" class="icon-btn" aria-label="Language">🌐</button>
+      <button id="menu-btn" class="icon-btn" aria-label="Menu">☰</button>
     </div>
   </header>
+
+  <!-- Slide-out menu (replaces the 10-icon cram) -->
+  <div id="menu-overlay" class="menu-overlay hidden">
+    <div class="menu-card">
+      <div class="menu-head">
+        <h2 data-i18n="menu_title">Menu</h2>
+        <button id="menu-close" class="close-btn">×</button>
+      </div>
+      <div class="menu-grid">
+        <button class="menu-item" id="feedback-btn"><span class="menu-icon">💬</span><span class="menu-label" data-i18n="m_feedback">Feedback</span></button>
+        <button class="menu-item" id="settings-btn"><span class="menu-icon">⚙️</span><span class="menu-label" data-i18n="m_settings">Settings</span></button>
+        <button class="menu-item" id="bookmarks-btn"><span class="menu-icon">🔖</span><span class="menu-label" data-i18n="m_bookmarks">Bookmarks</span></button>
+        <button class="menu-item" id="notes-btn"><span class="menu-icon">📝</span><span class="menu-label" data-i18n="m_notes">My notes</span></button>
+        <button class="menu-item" id="mistakes-btn"><span class="menu-icon">📋</span><span class="menu-label" data-i18n="m_mistakes">My mistakes</span></button>
+        <button class="menu-item" id="chazara-btn"><span class="menu-icon">🔁</span><span class="menu-label" data-i18n="m_chazara">Chazara</span></button>
+        <button class="menu-item" id="focus-btn"><span class="menu-icon">🎯</span><span class="menu-label" data-i18n="m_focus">Focus mode</span></button>
+        <button class="menu-item" id="sbs-btn"><span class="menu-icon">⇔</span><span class="menu-label" data-i18n="m_sbs">Side by side</span></button>
+      </div>
+      <div id="menu-xp" class="menu-xp"></div>
+    </div>
+  </div>
 
   <main id="app-main">
     <!-- Language -->

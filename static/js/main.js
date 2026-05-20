@@ -838,6 +838,30 @@
   }
 
   function wireHeaderButtons() {
+    // Menu drawer
+    const menu = document.getElementById("menu-overlay");
+    document.getElementById("menu-btn").addEventListener("click", () => {
+      // Refresh XP + daily inside the menu when opened
+      const xpEl = document.getElementById("menu-xp");
+      if (xpEl) {
+        const xp = PROGRESS.state.xp || 0;
+        const lvl = PROGRESS.state.level || 1;
+        const xpInLevel = xp % 100;
+        const daily = PROGRESS.state.dailyProgress || { count: 0 };
+        const goal = SETTINGS.get("dailyGoalAmount") || 10;
+        xpEl.innerHTML =
+          '<div>⭐ Level ' + lvl + ' — ' + xpInLevel + '/100 XP</div>' +
+          '<div>📅 Today: ' + (daily.count || 0) + '/' + goal + '</div>';
+      }
+      menu.classList.remove("hidden");
+    });
+    document.getElementById("menu-close").addEventListener("click", () => menu.classList.add("hidden"));
+    menu.addEventListener("click", (e) => { if (e.target === menu) menu.classList.add("hidden"); });
+    // Close menu when any item inside is clicked
+    menu.querySelectorAll(".menu-item").forEach(b => {
+      b.addEventListener("click", () => setTimeout(() => menu.classList.add("hidden"), 50));
+    });
+
     document.getElementById("settings-btn").addEventListener("click", () => SETTINGS.open());
     document.getElementById("settings-close").addEventListener("click", () => SETTINGS.close());
     wireFeedback();

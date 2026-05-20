@@ -101,16 +101,16 @@
           html += '</div>';
         }
 
-        // Section-level translation (only if section has own)
+        // ONE inline English block per section — visible by default, not collapsed.
+        // If we have a curated explanation that differs from the translation, show that as a
+        // separate "What's happening here" note. Otherwise just show the translation.
+        const sameText = translation && explanation && translation.trim() === explanation.trim();
         if (ownAramaic && translation) {
-          html += '<details class="plainread-translation"><summary>' + I18N.t("plainread_show_translation") + '</summary>';
-          html += '<div class="plainread-translation-body">' + escapeHtml(translation) + '</div>';
-          html += '</details>';
+          html += '<div class="plainread-translation-inline">' + escapeHtml(translation) + '</div>';
         }
-
-        // Explanation (per section)
-        if (explanation) {
-          html += '<details class="plainread-explanation"' + (ownAramaic ? '' : ' open') + '><summary>' + I18N.t("plainread_explanation") + '</summary>';
+        if (explanation && !sameText && !(ownAramaic && translation && translation === explanation)) {
+          // Curated commentary distinct from the raw translation
+          html += '<details class="plainread-explanation" open><summary>💭 ' + I18N.t("plainread_explanation") + '</summary>';
           html += '<div class="plainread-explanation-body">' + escapeHtml(explanation) + '</div>';
           html += '</details>';
         }
@@ -234,9 +234,22 @@
     popup.classList.remove("hidden");
 
     try {
-      const res = await fetch("/api/lexicon/" + encodeURIComponent(clean));
-      const data = await res.json();
-      const entries = Array.isArray(data) ? data : (data && Array.isArray(data.lexicon_entries) ? data.lexicon_entries : []);
+      // Try the cleaned word, then peel off common Hebrew prefixes one at a time
+      const PREFIXES = ["ו", "ה", "ב", "ל", "מ", "כ", "ש", "וה", "וב", "ול", "ומ", "וכ"];
+      const variants = [clean];
+      for (const p of PREFIXES) {
+        if (clean.startsWith(p) && clean.length > p.length + 1) variants.push(clean.slice(p.length));
+      }
+      let entries = [];
+      for (const v of variants) {
+        try {
+          const r = await fetch("https://www.sefaria.org/api/words/" + encodeURIComponent(v) + "?never_split=1");
+          if (!r.ok) continue;
+          const d = await r.json();
+          const got = Array.isArray(d) ? d : (d && Array.isArray(d.lexicon_entries) ? d.lexicon_entries : []);
+          if (got.length) { entries = got; break; }
+        } catch (e) { /* try next */ }
+      }
       if (!entries.length) {
         popup.innerHTML =
           '<div class="word-popup-aramaic">' + escapeHtml(clean) + '</div>' +

@@ -171,11 +171,75 @@ def build_tanya():
     }
 
 
+def build_chumash():
+    print("Building Chumash Bereishis perakim 1-5 …")
+    sugyos = []
+    for ch in range(1, 6):
+        ref = f"Genesis.{ch}"
+        data = fetch_sefaria(ref)
+        sugyos.append({
+            "id": f"chumash-bereishis-p{ch}",
+            "daf": f"Perek {ch}",
+            "title": f"Bereishis Perek {ch}",
+            "title_yiddish": f"בראשית פּרק {ch}",
+            "illustration": "scroll",
+            "sefaria_ref": ref,
+            "aramaic": "", "aramaic_translation": "", "aramaic_translation_yiddish": "",
+            "aramaic_words": [],
+            "sections": build_sections(data)
+        })
+    return {
+        "id": "chumash-bereishis",
+        "name": "Bereishis",
+        "name_yiddish": "בראשית",
+        "content_type": "chumash",
+        "default_mode": "plain_read",
+        "perakim": [
+            {"num": 1, "name": "Perakim 1-5", "name_yiddish": "פּרקים א׳–ה׳",
+             "name_en": "First five chapters", "name_en_yiddish": "ערשטע פֿינף פּרקים",
+             "sugyos": sugyos}
+        ]
+    }
+
+
+def build_pirkei_avos():
+    print("Building Pirkei Avos perakim 1-6 …")
+    sugyos = []
+    for ch in range(1, 7):
+        ref = f"Pirkei Avot.{ch}"
+        data = fetch_sefaria(ref)
+        sugyos.append({
+            "id": f"pirkei-avos-p{ch}",
+            "daf": f"Perek {ch}",
+            "title": f"Pirkei Avos Perek {ch}",
+            "title_yiddish": f"פּרקי אבות פּרק {ch}",
+            "illustration": "scroll",
+            "sefaria_ref": ref,
+            "aramaic": "", "aramaic_translation": "", "aramaic_translation_yiddish": "",
+            "aramaic_words": [],
+            "sections": build_sections(data)
+        })
+    return {
+        "id": "pirkei-avos",
+        "name": "Pirkei Avos",
+        "name_yiddish": "פּרקי אבות",
+        "content_type": "mishnayos",
+        "default_mode": "plain_read",
+        "perakim": [
+            {"num": 1, "name": "Perakim 1-6", "name_yiddish": "פּרקים א׳–ו׳",
+             "name_en": "All six chapters", "name_en_yiddish": "אַלע זעקס פּרקים",
+             "sugyos": sugyos}
+        ]
+    }
+
+
 def main():
     content = {
         "masechtos": [
             build_gemara_shabbos(),
-            build_tanya()
+            build_tanya(),
+            build_chumash(),
+            build_pirkei_avos()
         ]
     }
 
