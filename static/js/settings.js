@@ -26,6 +26,7 @@
     smartDailyReview: true,
     chazaraMode: true,
     dailyPlan: true,
+    colorStructure: true,
     // Commentary
     showRashi: true,
     showTosfos: true,

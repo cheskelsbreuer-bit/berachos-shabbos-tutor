@@ -17,7 +17,6 @@
     /** Wrap EVERY Hebrew word in a tappable span. Lookup happens live via Sefaria lexicon. */
     renderTappableHebrew(hebrewText, words, secIdx) {
       if (!hebrewText) return "";
-      // Pre-canned word map (still supported as fallback) — but every Hebrew token gets the .pr-word class.
       PLAINREAD._wordMap = PLAINREAD._wordMap || {};
       if (words && words.length) {
         words.forEach((w) => {
@@ -25,14 +24,17 @@
           PLAINREAD._wordMap["canned:" + w.a] = w;
         });
       }
-      // Split on whitespace, wrap any Hebrew-containing token.
       const tokens = hebrewText.split(/(\s+)/);
-      return tokens.map((tok) => {
+      let html = tokens.map((tok) => {
         if (/^\s+$/.test(tok)) return tok;
-        // Anything containing Hebrew letters becomes tappable
         if (!/[֐-׿]/.test(tok)) return escapeHtml(tok);
         return '<span class="pr-word" data-w="' + escapeHtml(tok) + '">' + escapeHtml(tok) + '</span>';
       }).join("");
+      // Apply color-coded structure highlights (questions/answers/proofs/markers)
+      if (typeof window.colorCodeHebrew === "function") {
+        html = window.colorCodeHebrew(html);
+      }
+      return html;
     },
 
     render() {
@@ -87,6 +89,9 @@
         if (marker && this.sections.length > 1) {
           html += '<div class="pr-section-marker">' + escapeHtml(marker) + '</div>';
         }
+        // Sentence-level bookmark button
+        const sBookmarked = (typeof isSentenceBookmarked === "function") ? isSentenceBookmarked(this.page.id, sec.id) : false;
+        html += '<button class="pr-section-bookmark" data-section-bookmark="' + escapeHtml(sec.id) + '" title="' + I18N.t("sentence_bookmark") + '">' + (sBookmarked ? "🔖" : "📑") + '</button>';
 
         // Section-level Hebrew (only if section has its own)
         if (ownAramaic) {
@@ -166,17 +171,35 @@
 
       wireCardActions(c, this.page.id, this.sections[0] ? this.sections[0].id : "", () => this.render());
 
-      // Wire tappable words — every Hebrew token, live lexicon lookup
+      // Wire tappable words — every Hebrew token, live lexicon lookup, long-press for grammar
       c.querySelectorAll(".pr-word").forEach((span) => {
+        const wasLong = (typeof window.attachLongPress === "function")
+          ? window.attachLongPress(span, () => {
+              const rawWord = span.dataset.w;
+              if (rawWord) showWordPopupLive(span, rawWord, /*extended*/ true);
+            })
+          : () => false;
         span.addEventListener("click", (e) => {
           e.stopPropagation();
+          if (wasLong()) return; // long-press already handled it
           const rawWord = span.dataset.w;
           if (!rawWord) return;
-          // Check pre-canned first
           const canned = PLAINREAD._wordMap["canned:" + rawWord];
           if (canned) { showWordPopup(span, canned); return; }
-          // Live Sefaria lexicon lookup
-          showWordPopupLive(span, rawWord);
+          showWordPopupLive(span, rawWord, false);
+        });
+      });
+
+      // Wire sentence-bookmark buttons
+      c.querySelectorAll("[data-section-bookmark]").forEach((btn) => {
+        btn.addEventListener("click", (e) => {
+          e.stopPropagation();
+          const sid = btn.dataset.sectionBookmark;
+          if (typeof toggleSentenceBookmark === "function") {
+            const added = toggleSentenceBookmark(this.page.id, sid);
+            btn.textContent = added ? "🔖" : "📑";
+            showToast(added ? I18N.t("bookmark_added") : I18N.t("bookmark_removed"));
+          }
         });
       });
 
@@ -224,7 +247,7 @@
     return String(w || "").replace(/[֑-ׇ]/g, "").replace(/[.,;:()\[\]"'׳״־?!]/g, "").trim();
   }
 
-  async function showWordPopupLive(anchor, rawWord) {
+  async function showWordPopupLive(anchor, rawWord, extended) {
     const clean = stripNikud(rawWord);
     const popup = document.getElementById("word-popup");
     popup.innerHTML =
@@ -274,7 +297,9 @@
         walk(e.content);
         walk(e.senses);
         walk(e.definition);
-        const def = senses.slice(0, 3).join(" • ").slice(0, 280) || "No definition found.";
+        const limit = extended ? 8 : 3;
+        const maxLen = extended ? 800 : 280;
+        const def = senses.slice(0, limit).join(" • ").slice(0, maxLen) || "No definition found.";
         const source = (e.parent_lexicon_details && (e.parent_lexicon_details.name || e.parent_lexicon)) || e.parent_lexicon || "";
         popup.innerHTML =
           '<div class="word-popup-aramaic">' + escapeHtml(e.headword || clean) + '</div>' +

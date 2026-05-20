@@ -1364,3 +1364,216 @@ body[data-lang="yi"] .menu-overlay { justify-content: flex-start; }
 @media (max-width: 700px) {
   .menu-card { width: 100vw; }
 }
+
+/* V10: Better Hebrew font + new feature styles */
+.plainread-hebrew, .aramaic-text, .sefaria-hebrew, .word-popup-aramaic,
+.flashcard-face, .glossary-abbr, .glossary-full,
+.pr-section .plainread-hebrew, body[data-lang="yi"] {
+  font-family: "Frank Ruhl Libre", "Heebo", "SBL Hebrew", "Noto Sans Hebrew", "David Libre", "David CLM", serif !important;
+}
+.plainread-hebrew, .sefaria-hebrew {
+  font-feature-settings: "kern" 1;
+  letter-spacing: 0;
+}
+
+/* Color-coded Gemara structure */
+.g-marker {
+  background: linear-gradient(180deg, transparent 60%, #fef08a 60%);
+  font-weight: 700;
+  padding: 0 3px;
+  border-radius: 3px;
+}
+.g-question {
+  color: #1d4ed8;
+  font-weight: 600;
+  border-bottom: 2px dotted #93c5fd;
+}
+.g-answer {
+  color: #047857;
+  font-weight: 600;
+}
+.g-proof {
+  background: rgba(244, 114, 182, 0.15);
+  padding: 0 3px;
+  border-radius: 3px;
+  font-weight: 600;
+  color: #be185d;
+}
+body[data-contrast="high"] .g-marker { background: transparent; color: #ffd700; }
+body[data-contrast="high"] .g-question { color: #93c5fd; }
+body[data-contrast="high"] .g-answer { color: #6ee7b7; }
+body[data-contrast="high"] .g-proof { color: #f9a8d4; background: transparent; }
+
+/* Sentence-level bookmark button */
+.pr-section { position: relative; }
+.pr-section-bookmark {
+  position: absolute;
+  top: 10px;
+  inset-inline-end: 10px;
+  background: transparent;
+  border: none;
+  font-size: 1.2em;
+  cursor: pointer;
+  padding: 4px 8px;
+  border-radius: 8px;
+  opacity: 0.55;
+  transition: opacity 0.15s;
+}
+.pr-section-bookmark:hover { opacity: 1; background: rgba(0,0,0,0.05); }
+
+/* Today's Daf widget */
+.daf-yomi-widget {
+  background: linear-gradient(135deg, #fef9c3, #fef3c7);
+  border: 2px solid #facc15;
+  border-radius: var(--radius-lg);
+  padding: 14px 18px;
+  margin: 14px 0;
+  display: flex; flex-wrap: wrap; align-items: center;
+  gap: 12px;
+}
+body[data-contrast="high"] .daf-yomi-widget { background: #1a1a1a; border-color: #ffd700; }
+.daf-yomi-label { font-size: 0.85em; color: #78350f; font-weight: 700; }
+.daf-yomi-title { font-size: 1.15em; font-weight: 700; flex: 1; min-width: 120px; }
+.daf-yomi-link {
+  background: var(--primary, #4f6df5);
+  color: white !important;
+  text-decoration: none;
+  padding: 8px 14px;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 0.92em;
+}
+
+/* Resume widget */
+.resume-wrap { margin-top: 12px; }
+.resume-btn-big {
+  width: 100%;
+  background: linear-gradient(135deg, #4f6df5, #6366f1);
+  border: none;
+  border-radius: var(--radius-lg);
+  padding: 16px 18px;
+  cursor: pointer;
+  display: flex; align-items: center; gap: 14px;
+  color: white;
+  font-family: inherit;
+  text-align: start;
+  box-shadow: 0 6px 18px rgba(79, 109, 245, 0.25);
+  transition: transform 0.15s;
+}
+.resume-btn-big:hover { transform: translateY(-2px); }
+.resume-emoji { font-size: 2em; }
+.resume-label { font-size: 0.82em; opacity: 0.92; }
+.resume-title { font-size: 1.1em; font-weight: 700; }
+
+/* Glossary modal */
+.glossary-card { max-width: 540px; }
+.glossary-body-wrap { overflow-y: auto; flex: 1; padding: 4px 2px; }
+.glossary-intro {
+  background: var(--bg, #f7fafc);
+  border-radius: 10px;
+  padding: 10px 14px;
+  margin-bottom: 14px;
+  color: var(--text-soft);
+  font-size: 0.92em;
+  line-height: 1.5;
+}
+.glossary-section { margin-bottom: 18px; }
+.glossary-h {
+  margin: 0 0 8px;
+  font-size: 0.95em;
+  color: var(--primary);
+}
+.glossary-row {
+  display: flex; gap: 12px;
+  padding: 10px 12px;
+  background: var(--bg-card, white);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  margin-bottom: 6px;
+}
+.glossary-abbr {
+  font-weight: 700;
+  font-size: 1.1em;
+  color: var(--primary);
+  min-width: 60px;
+  text-align: end;
+  direction: rtl;
+}
+.glossary-body { flex: 1; }
+.glossary-full {
+  font-size: 0.95em;
+  font-weight: 600;
+  direction: rtl;
+  text-align: end;
+  margin-bottom: 4px;
+}
+.glossary-meaning {
+  font-size: 0.9em;
+  color: var(--text-soft);
+  line-height: 1.4;
+}
+
+/* First-time tutorial overlay */
+.tutorial-overlay {
+  position: fixed; inset: 0;
+  background: rgba(15,23,42, 0.85);
+  z-index: 1000;
+  display: flex; align-items: center; justify-content: center;
+  padding: 20px;
+  animation: fadeIn 0.3s;
+}
+.tutorial-card {
+  background: white;
+  border-radius: var(--radius-lg);
+  padding: 28px 26px 20px;
+  max-width: 460px;
+  width: 100%;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+}
+.tutorial-card h2 {
+  margin: 0 0 10px;
+  font-size: 1.45em;
+  color: var(--primary);
+}
+.tutorial-card p {
+  margin: 0 0 18px;
+  line-height: 1.6;
+  color: var(--text);
+}
+.tutorial-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+.tutorial-skip {
+  background: transparent;
+  border: none;
+  color: var(--text-soft);
+  cursor: pointer;
+  padding: 10px 14px;
+  font-family: inherit;
+  font-size: 0.95em;
+  border-radius: 8px;
+}
+.tutorial-skip:hover { background: var(--bg); }
+.tutorial-next {
+  background: var(--primary);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 12px 22px;
+  font-weight: 700;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 1em;
+}
+.tutorial-dots {
+  display: inline-flex; gap: 6px;
+}
+.tut-dot {
+  width: 8px; height: 8px; border-radius: 50%;
+  background: var(--border);
+  transition: background 0.2s;
+}
+.tut-dot.active { background: var(--primary); width: 24px; border-radius: 4px; }
