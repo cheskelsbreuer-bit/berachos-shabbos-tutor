@@ -1577,3 +1577,184 @@ body[data-contrast="high"] .daf-yomi-widget { background: #1a1a1a; border-color:
   transition: background 0.2s;
 }
 .tut-dot.active { background: var(--primary); width: 24px; border-radius: 4px; }
+
+/* V10: daf summary, daily torah, my library, achievements, rabbi names, print */
+.daf-summary {
+  background: linear-gradient(135deg, #fef9c3, #ecfeff);
+  border: 2px solid #facc15;
+  border-radius: var(--radius-lg);
+  padding: 18px 20px;
+  margin-bottom: 18px;
+  box-shadow: var(--shadow);
+}
+body[data-contrast="high"] .daf-summary { background: #1a1a1a; border-color: #ffd700; }
+.daf-summary-label {
+  font-size: 0.82em;
+  color: #78350f;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+body[data-contrast="high"] .daf-summary-label { color: #ffd700; }
+.daf-summary-title { font-size: 1.2em; font-weight: 700; margin-bottom: 8px; }
+.daf-summary-body { line-height: 1.6; color: var(--text); }
+.daf-summary-chars { margin-top: 10px; font-size: 0.9em; color: var(--text-soft); }
+.daf-summary-char {
+  display: inline-block;
+  background: rgba(0,0,0,0.06);
+  padding: 2px 8px;
+  border-radius: 999px;
+  margin: 2px;
+  font-weight: 600;
+}
+
+.daily-torah {
+  background: linear-gradient(135deg, #ddd6fe, #f9a8d4);
+  border-radius: var(--radius-lg);
+  padding: 18px 20px;
+  margin: 14px 0;
+  color: #2d1b4e;
+  box-shadow: 0 8px 22px rgba(167, 139, 250, 0.3);
+}
+body[data-contrast="high"] .daily-torah { background: #1a1a1a; color: #ffd700; border: 2px solid #ffd700; }
+.daily-torah-label { font-size: 0.85em; font-weight: 700; opacity: 0.85; margin-bottom: 8px; }
+.daily-torah-he {
+  direction: rtl;
+  text-align: right;
+  font-family: "Frank Ruhl Libre", serif;
+  font-size: 1.2em;
+  line-height: 1.7;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+.daily-torah-en { font-size: 0.98em; line-height: 1.5; font-style: italic; margin-bottom: 6px; }
+.daily-torah-ref { font-size: 0.78em; text-align: end; opacity: 0.7; }
+
+/* Rabbi name highlight */
+.rabbi-name {
+  background: rgba(99, 102, 241, 0.12);
+  border-bottom: 1px solid rgba(99, 102, 241, 0.5);
+  padding: 0 3px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+.rabbi-name:hover { background: rgba(99, 102, 241, 0.28); }
+
+/* My Library */
+.lib-section { margin-bottom: 22px; }
+.lib-h { margin: 0 0 8px; font-size: 1em; color: var(--primary); }
+.lib-empty { color: var(--text-soft); font-style: italic; padding: 6px 0; }
+.lib-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 12px 14px;
+  margin-bottom: 6px;
+  cursor: pointer;
+  font-family: inherit;
+  color: var(--text);
+  text-align: start;
+  font-weight: 600;
+  transition: border-color 0.15s;
+}
+.lib-row:hover { border-color: var(--primary); }
+.lib-count {
+  background: var(--primary);
+  color: white;
+  border-radius: 999px;
+  padding: 2px 9px;
+  font-size: 0.82em;
+}
+.lib-note {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 10px 12px;
+  margin-bottom: 8px;
+}
+.lib-note-head { margin-bottom: 6px; }
+.lib-note-open {
+  background: transparent;
+  border: none;
+  color: var(--primary);
+  font-weight: 700;
+  cursor: pointer;
+  padding: 0;
+  font-family: inherit;
+  font-size: 0.9em;
+}
+.lib-note-text { font-size: 0.95em; line-height: 1.5; }
+
+/* Achievements */
+.ach-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+.ach-tile {
+  background: var(--bg);
+  border: 2px dashed var(--border);
+  border-radius: 12px;
+  padding: 16px 10px;
+  text-align: center;
+  opacity: 0.5;
+  transition: all 0.2s;
+}
+.ach-tile.earned {
+  opacity: 1;
+  background: linear-gradient(135deg, #fef9c3, #fef3c7);
+  border-style: solid;
+  border-color: #facc15;
+}
+.ach-emoji { font-size: 2em; margin-bottom: 6px; }
+.ach-title { font-weight: 700; font-size: 0.95em; }
+.ach-desc { font-size: 0.78em; color: var(--text-soft); margin-top: 4px; }
+.ach-summary {
+  text-align: center;
+  padding: 10px;
+  background: var(--bg);
+  border-radius: 10px;
+  font-weight: 700;
+}
+
+/* Print mode — clean view for offline learning */
+@media print {
+  .app-header, .menu-overlay, .a11y-btn, .read-tip, .toast,
+  .topbar-btn, .resume-wrap, .daf-yomi-wrap, .daily-torah-wrap,
+  .picker-tools, .type-chips, .pr-section-bookmark, .card-actions-row,
+  .plainread-bottom-actions, .nav-row, .torahanytime-btn, .sefaria-panel,
+  #combo-indicator, #celebrate, .mascot-wrap, .word-popup { display: none !important; }
+  body { background: white; color: black; }
+  .pr-section {
+    background: white !important;
+    border: 1px solid #ccc !important;
+    box-shadow: none !important;
+    page-break-inside: avoid;
+  }
+  .plainread-hebrew {
+    color: black !important;
+    font-size: 1.3em !important;
+  }
+  .plainread-translation-inline {
+    color: black !important;
+  }
+}
+
+.daf-summary-char.clickable {
+  background: rgba(99, 102, 241, 0.15);
+  border: 1px solid rgba(99, 102, 241, 0.4);
+  cursor: pointer;
+  font-family: inherit;
+  color: var(--text);
+  transition: all 0.15s;
+}
+.daf-summary-char.clickable:hover {
+  background: var(--primary);
+  color: white;
+  border-color: var(--primary);
+}

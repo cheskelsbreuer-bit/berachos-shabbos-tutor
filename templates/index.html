@@ -42,8 +42,33 @@
         <button class="menu-item" id="focus-btn"><span class="menu-icon">🎯</span><span class="menu-label" data-i18n="m_focus">Focus mode</span></button>
         <button class="menu-item" id="sbs-btn"><span class="menu-icon">⇔</span><span class="menu-label" data-i18n="m_sbs">Side by side</span></button>
         <button class="menu-item" id="glossary-btn"><span class="menu-icon">📚</span><span class="menu-label" data-i18n="m_glossary">Quick reference</span></button>
+        <button class="menu-item" id="library-btn"><span class="menu-icon">📚</span><span class="menu-label" data-i18n="m_library">My library</span></button>
+        <button class="menu-item" id="achievements-btn"><span class="menu-icon">🏆</span><span class="menu-label" data-i18n="m_achievements">Achievements</span></button>
+        <button class="menu-item" id="print-btn"><span class="menu-icon">🖨️</span><span class="menu-label" data-i18n="m_print">Print this daf</span></button>
       </div>
       <div id="menu-xp" class="menu-xp"></div>
+    </div>
+  </div>
+
+  <!-- My Library modal -->
+  <div id="library-overlay" class="menu-overlay hidden">
+    <div class="menu-card glossary-card">
+      <div class="menu-head">
+        <h2 data-i18n="library_title">My Library</h2>
+        <button id="library-close" class="close-btn">×</button>
+      </div>
+      <div id="library-body" class="glossary-body-wrap"></div>
+    </div>
+  </div>
+
+  <!-- Achievements modal -->
+  <div id="achievements-overlay" class="menu-overlay hidden">
+    <div class="menu-card glossary-card">
+      <div class="menu-head">
+        <h2 data-i18n="achievements_title">Achievements</h2>
+        <button id="achievements-close" class="close-btn">×</button>
+      </div>
+      <div id="achievements-body" class="glossary-body-wrap"></div>
     </div>
   </div>
 
@@ -125,6 +150,7 @@
       <h1 class="big-title" data-i18n="pick_title">What do you want to learn?</h1>
       <div id="resume-wrap" class="resume-wrap"></div>
       <div id="daf-yomi-wrap" class="daf-yomi-wrap"></div>
+      <div id="daily-torah-wrap" class="daily-torah-wrap"></div>
       <div id="type-chips" class="type-chips">
         <button class="type-chip active" data-type="all" data-i18n="type_all">All</button>
         <button class="type-chip" data-type="gemara" data-i18n="type_gemara">📚 Gemara</button>
@@ -312,7 +338,10 @@
   <script src="/static/js/features-v5.js"></script>
   <script src="/static/js/sefaria.js"></script>
   <script src="/static/js/glossary.js"></script>
+  <script src="/static/js/daf-summaries.js"></script>
+  <script src="/static/js/rabbis.js"></script>
   <script src="/static/js/features-v9.js"></script>
+  <script src="/static/js/features-v10.js"></script>
   <script src="/static/js/main.js"></script>
 </body>
 </html>

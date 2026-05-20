@@ -51,6 +51,10 @@
       const sugyaLevelHebrew = !anySectionHasOwnHebrew && this.sugya && this.sugya.aramaic;
 
       let html = '<div class="plainread-container">';
+      // Daf summary at the top (if available for this sugya)
+      if (typeof renderDafSummary === "function") {
+        html += renderDafSummary(this.page.id);
+      }
       html += cardActionsRow(this.sections[0] ? this.sections[0].id : "");
 
       // Case B: top-of-page sugya Hebrew block (shown once)
@@ -187,6 +191,16 @@
           const canned = PLAINREAD._wordMap["canned:" + rawWord];
           if (canned) { showWordPopup(span, canned); return; }
           showWordPopupLive(span, rawWord, false);
+        });
+      });
+
+      // Wire rabbi-bio chips inside the daf summary
+      c.querySelectorAll("[data-rabbi]").forEach((btn) => {
+        btn.addEventListener("click", (e) => {
+          e.stopPropagation();
+          if (typeof window.showRabbiBio === "function") {
+            window.showRabbiBio(btn, btn.dataset.rabbi);
+          }
         });
       });
 
