@@ -305,17 +305,14 @@
 
   // ============ Content load ============
   async function loadContent() {
-    // Try the Flask API first; fall back to the static JSON file (for GitHub Pages / static hosts).
-    const candidates = ["/api/content", "data/content.json", "/data/content.json"];
-    for (const url of candidates) {
-      try {
-        const res = await fetch(url);
-        if (!res.ok) continue;
+    try {
+      const res = await fetch("/api/content");
+      if (res.ok) {
         CONTENT = await res.json();
         if (typeof window.cacheContent === "function") window.cacheContent(CONTENT);
         return CONTENT;
-      } catch (e) { /* try next */ }
-    }
+      }
+    } catch (e) { /* fall through */ }
     CONTENT = { masechtos: [] };
     showToast("Could not load content");
     return CONTENT;
