@@ -26,14 +26,27 @@ def index():
     return render_template("index.html")
 
 
+_FULL_CACHE = None
+def _load_full():
+    global _FULL_CACHE
+    if _FULL_CACHE is None:
+        _FULL_CACHE = load_content()
+    return _FULL_CACHE
+
+
 @app.route("/api/content")
 def api_content():
+    """Catalog only (no section text). ~145 KB instead of 22 MB."""
+    catalog_path = BASE_DIR / "data" / "catalog.json"
+    if catalog_path.exists():
+        with open(catalog_path, "r", encoding="utf-8") as f:
+            return jsonify(json.load(f))
     return jsonify(load_content())
 
 
 @app.route("/api/sugya/<sugya_id>")
 def api_sugya(sugya_id):
-    data = load_content()
+    data = _load_full()
     for masechta in data.get("masechtos", []):
         for perek in masechta.get("perakim", []):
             for sugya in perek.get("sugyos", []):

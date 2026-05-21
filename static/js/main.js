@@ -75,12 +75,34 @@
     return all[idx + 1];
   };
 
-  window.pickSugyaAndStart = function (sugyaId, mode) {
+  /** Ensure the sugya has its sections loaded (lazy-fetch from /api/sugya/<id> if missing). */
+  async function ensureSugyaLoaded(sugya) {
+    if (!sugya) return null;
+    if (sugya.sections && sugya.sections.length) return sugya;
+    try {
+      const r = await fetch("/api/sugya/" + encodeURIComponent(sugya.id));
+      if (!r.ok) return sugya;
+      const full = await r.json();
+      if (full && full.sections) {
+        // Merge in-place so findSugya keeps returning it
+        Object.keys(full).forEach((k) => { sugya[k] = full[k]; });
+      }
+    } catch (e) { /* network issue — show what we have */ }
+    return sugya;
+  }
+  window.ensureSugyaLoaded = ensureSugyaLoaded;
+
+  window.pickSugyaAndStart = async function (sugyaId, mode) {
     const found = findSugya(sugyaId);
     if (!found) return;
     CURRENT_SUGYA = found.sugya;
     PROGRESS.state.currentSugyaId = sugyaId;
     PROGRESS.save();
+    // Show a loading hint while we lazy-fetch
+    const ld = document.getElementById("learn-container");
+    if (ld) ld.innerHTML = '<div class="loading-text">⏳ Loading…</div>';
+    showScreen("screen-learn");
+    await ensureSugyaLoaded(CURRENT_SUGYA);
     startLearning(mode);
   };
 
@@ -452,12 +474,14 @@
     });
   }
 
-  window.pickSugya = function (sugyaId) {
+  window.pickSugya = async function (sugyaId) {
     const found = findSugya(sugyaId);
     if (!found) return;
     CURRENT_SUGYA = found.sugya;
     PROGRESS.state.currentSugyaId = sugyaId;
     PROGRESS.save();
+    // Lazy-fetch sections (so mode picker can see what modes are available)
+    await ensureSugyaLoaded(CURRENT_SUGYA);
     showModeScreen(PROGRESS.state.preferredMode, "challenges");
   };
 
